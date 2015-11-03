@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'BXViewPager_Example', :exclusive => true do
   pod "BXViewPager", :path => "../"
+  pod 'PinAutoLayout'
 end
 
 target 'BXViewPager_Tests', :exclusive => true do

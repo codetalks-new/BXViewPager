@@ -1,0 +1,17 @@
+PODS:
+  - BXViewPager (0.1.0)
+  - PinAutoLayout (1.0.0)
+
+DEPENDENCIES:
+  - BXViewPager (from `../`)
+  - PinAutoLayout
+
+EXTERNAL SOURCES:
+  BXViewPager:
+    :path: ../
+
+SPEC CHECKSUMS:
+  BXViewPager: 3e18058671d615f2fee53398196a46f79d32c0bb
+  PinAutoLayout: 27a118d2aa1c39cdb6c0461829b9ca8ffcf6b706
+
+COCOAPODS: 0.39.0

@@ -1,0 +1,6 @@
+framework module BXViewPager {
+  umbrella header "BXViewPager-umbrella.h"
+
+  export *
+  module * { export * }
+}

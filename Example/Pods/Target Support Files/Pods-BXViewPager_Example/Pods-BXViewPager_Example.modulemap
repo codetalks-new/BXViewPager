@@ -1,0 +1,6 @@
+framework module Pods_BXViewPager_Example {
+  umbrella header "Pods-BXViewPager_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
