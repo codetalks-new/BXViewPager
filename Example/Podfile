@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'BXViewPager_Example', :exclusive => true do
+  pod "BXViewPager", :path => "../"
+end
+
+target 'BXViewPager_Tests', :exclusive => true do
+  pod "BXViewPager", :path => "../"
+
+  
+end
