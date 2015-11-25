@@ -85,7 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-BXViewPager_Tests/BXViewPager.framework"
+  install_framework "Pods-BXViewPager_Tests/PinAutoLayout.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-BXViewPager_Tests/BXViewPager.framework"
+  install_framework "Pods-BXViewPager_Tests/PinAutoLayout.framework"
 fi

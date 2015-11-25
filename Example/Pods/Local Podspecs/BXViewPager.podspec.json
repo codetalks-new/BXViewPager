@@ -21,5 +21,10 @@
     "BXViewPager": [
       "Pod/Assets/*.png"
     ]
+  },
+  "dependencies": {
+    "PinAutoLayout": [
+
+    ]
   }
 }
