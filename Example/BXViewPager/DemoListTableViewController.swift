@@ -32,7 +32,8 @@ class DemoListTableViewController: UITableViewController {
            let vc = ShowTitleViewController(title: "Tab \(index)")
             vcs.append(vc)
         }
-        let viewPagerVC = BXViewPagerViewController(viewControllers: vcs)
+        let viewPagerVC = BXViewPagerViewController()
+      viewPagerVC.setViewControllers(vcs, animated: true)
         showViewController(viewPagerVC, sender: self)
         
     }

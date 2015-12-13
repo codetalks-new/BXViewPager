@@ -11,16 +11,11 @@ import UIKit
 // Build for target uimodel
 //locale (None, None)
 import UIKit
-import SwiftyJSON
-import Bond
-import CocoaLumberjack
-import BXModel
-import PromiseKit
 
 // -BXTabView(m=BXTab):cc
 // title[x,b12](f16,cdt);indicator[b0,x,h2]:v
 
-public class BXTabView : UICollectionViewCell,BXBindable{
+public class BXTabView : UICollectionViewCell{
   let titleLabel = UILabel(frame:CGRectZero)
   let indicatorView = UIView(frame:CGRectZero)
 
