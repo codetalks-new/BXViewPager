@@ -100,14 +100,14 @@ public class BXTabView : UICollectionViewCell{
     indicatorView.pinCenterX()
     indicatorView.pinBottom(0)
     indicatorView.pinHeight(2)
-    indicatorView.pinWidthToSibling(titleLabel, multiplier: 1.0, constant: 24)
+    indicatorView.pinWidthToSibling(titleLabel, multiplier: 1.0, constant: 40)
     
   }
   
   func setupAttrs(){
     backgroundColor = UIColor.whiteColor()
     titleLabel.textColor = UIColor.darkTextColor()
-    titleLabel.font = UIFont.systemFontOfSize(15)
+    titleLabel.font = UIFont.systemFontOfSize(13)
     titleLabel.textAlignment = .Center
 //    titleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
     indicatorView.backgroundColor = self.tintColor
@@ -117,8 +117,8 @@ public class BXTabView : UICollectionViewCell{
   public override func drawRect(rect: CGRect) {
     super.drawRect(rect)
     
-    UIColor(white: 0.912, alpha: 1.0).setFill()
-    UIRectFill(CGRect(x: rect.minX, y: rect.maxY - 1, width: rect.width, height: 1))
+//    UIColor(white: 0.937, alpha: 1.0).setFill()
+//    UIRectFill(CGRect(x: rect.minX, y: rect.maxY - 1, width: rect.width, height: 1))
   }
   
   

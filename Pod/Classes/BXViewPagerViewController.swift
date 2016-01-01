@@ -129,12 +129,12 @@ public class BXViewPagerViewController: UIViewController,UIGestureRecognizerDele
     private var pageController:UIPageViewController!
   private let flowLayout:UICollectionViewFlowLayout = {
       let flowLayout = UICollectionViewFlowLayout()
-      flowLayout.minimumInteritemSpacing = TabConstants.minInteritemSpacing
+      flowLayout.minimumInteritemSpacing = 0// TabConstants.minInteritemSpacing
       flowLayout.itemSize = CGSize(width:TabConstants.minItemWidth,height:TabConstants.defaultHeight)
       flowLayout.minimumLineSpacing = 0
       flowLayout.sectionInset = UIEdgeInsetsZero
 //      flowLayout.estimatedItemSize = flowLayout.itemSize
-      flowLayout.scrollDirection = .Horizontal
+      flowLayout.scrollDirection = .Vertical
       return flowLayout
   }()
     public var didSelectedTab: ( (BXTab) -> Void )?
@@ -184,7 +184,7 @@ public class BXViewPagerViewController: UIViewController,UIGestureRecognizerDele
         tabLayout.translatesAutoresizingMaskIntoConstraints = false
         pinTopLayoutGuide(tabLayout)
         tabLayout.pinHorizontal(0)
-        tabLayout.pinHeight(TabConstants.defaultHeight + 4)
+        tabLayout.pinHeight(TabConstants.defaultHeight)
         
         
         self.view.addSubview(containerView)
