@@ -241,8 +241,20 @@ public class BXViewPagerViewController: UIViewController,UIGestureRecognizerDele
       return
     }
     hasSelectAny = true
-      selectTabAtIndex(0)
-      showPageAtIndex(0)
+    recalculateItemSize()
+    selectTabAtIndex(0)
+    showPageAtIndex(0)
+  }
+  
+  func recalculateItemSize(){
+    let sectionInset = flowLayout.sectionInset
+    let totalWidth = self.view.bounds.width - flowLayout.minimumInteritemSpacing - sectionInset.left - sectionInset.right
+    let itemCount = viewControllers.count
+    let itemWidth = floor(totalWidth / CGFloat(itemCount) )
+    let itemHeight = flowLayout.itemSize.height
+    let itemSize = CGSize(width: itemWidth, height: itemHeight)
+    flowLayout.itemSize = itemSize
+    
   }
 
     public override func viewWillLayoutSubviews() {
