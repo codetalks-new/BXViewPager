@@ -234,9 +234,15 @@ public class BXViewPagerViewController: UIViewController,UIGestureRecognizerDele
         containerView.addGestureRecognizer(customPanGestureRcognizer!)
     }
   
+  private var hasSelectAny = false
+  
   func setupInitialViewController(){
-        selectTabAtIndex(0)
-        showPageAtIndex(0)
+    if hasSelectAny{
+      return
+    }
+    hasSelectAny = true
+      selectTabAtIndex(0)
+      showPageAtIndex(0)
   }
 
     public override func viewWillLayoutSubviews() {
