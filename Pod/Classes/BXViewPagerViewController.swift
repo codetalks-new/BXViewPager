@@ -110,6 +110,7 @@ public class BXViewPagerViewController: UIViewController,UIGestureRecognizerDele
   // The "More" navigation controller will not be returned by -viewControllers, but it may be returned by -selectedViewController.
   public func setViewControllers(viewControllers: [UIViewController], animated: Bool){
     self.viewControllers = viewControllers
+    
   }
   
 //  unowned(unsafe) public var selectedViewController: UIViewController? // This may return the "More" navigation controller if it exists.
@@ -126,7 +127,7 @@ public class BXViewPagerViewController: UIViewController,UIGestureRecognizerDele
     private var tabLayout:UICollectionView!
     private var containerView:UIView!
     
-    private var pageController:UIPageViewController!
+    public private(set) var pageController:UIPageViewController!
   private let flowLayout:UICollectionViewFlowLayout = {
       let flowLayout = UICollectionViewFlowLayout()
       flowLayout.minimumInteritemSpacing = 0// TabConstants.minInteritemSpacing
