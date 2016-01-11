@@ -313,7 +313,7 @@ extension BXTabViewController{
     controller.view.frame = frameForTabViewController
     self.containerView.addSubview(controller.view)
     controller.didMoveToParentViewController(self)
-    self.currentVisibleController = self
+    self.currentVisibleController = controller
   }
   
   private var frameForTabViewController:CGRect{
