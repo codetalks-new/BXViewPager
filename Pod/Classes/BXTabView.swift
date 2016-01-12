@@ -15,7 +15,7 @@ import UIKit
 // -BXTabView(m=BXTab):cc
 // title[x,b12](f16,cdt);indicator[b0,x,h2]:v
 
-public class BXTabView : UICollectionViewCell{
+public class BXTabView : BXTabViewCell{
   let titleLabel = UILabel(frame:CGRectZero)
   let indicatorView = UIView(frame:CGRectZero)
 
@@ -61,7 +61,7 @@ public class BXTabView : UICollectionViewCell{
   
   
   
-  public func bind(item:BXTab){
+  public override func bind(item:BXTab){
     titleLabel.text  = item.text
   }
   

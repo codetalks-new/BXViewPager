@@ -1,5 +1,5 @@
 PODS:
-  - BXViewPager (0.1.0):
+  - BXViewPager (0.1.1):
     - PinAutoLayout
   - PinAutoLayout (1.0.0)
   - Reveal-iOS-SDK (1.6.1)
@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  BXViewPager: db731b968e24675cd8810c6eee7146fc9b9f9e29
+  BXViewPager: 976c66ebd1bc9c5c216f2aeb5bc195d85165b927
   PinAutoLayout: 27a118d2aa1c39cdb6c0461829b9ca8ffcf6b706
   Reveal-iOS-SDK: ceae964076cebe3efe63e5e9abe3152efce46aa8
 

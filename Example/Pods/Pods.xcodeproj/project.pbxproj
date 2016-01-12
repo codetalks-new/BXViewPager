@@ -8,27 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		01F4DF521078A2C0F3D9B884A453674C /* Pods-BXViewPager_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE17868977C52598391730265884E698 /* Pods-BXViewPager_Example-dummy.m */; };
-		0231F70FFD100AC5563BF68A1027DB74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB07F54204BAFAE300703CF2E73F889 /* Foundation.framework */; };
-		043A1A23E247D3F4E910376075A1FA54 /* PinAutoLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 94F7A4AE0426476C947A70C7B4025C42 /* PinAutoLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A2E3A4AAA4D29A90C47F69263737015 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB07F54204BAFAE300703CF2E73F889 /* Foundation.framework */; };
+		145DB4EDBF23C528DBCBBA9722C3E3CD /* BXViewPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4BDD7656C6155E23043EA2AD950314 /* BXViewPagerViewController.swift */; };
+		171361333818C72431256FD0B5282F67 /* BXTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC0C72F054FF4FFA7D5C3BA5F1D7BE3 /* BXTab.swift */; };
+		2BEADF1222D92EB1D31C413E9C455367 /* BXTabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054BE5024BCCEA353E5112490BB4AC6D /* BXTabLayout.swift */; };
 		2C80F7BC73E48E55B2272557D7289862 /* Pods-BXViewPager_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA974BFC8F814243FA8B736DFC529912 /* Pods-BXViewPager_Tests-dummy.m */; };
-		3E06A45F1C03473500B48DD1 /* BXTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E06A45E1C03473500B48DD1 /* BXTab.swift */; };
-		3E06A4611C03474E00B48DD1 /* BXTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E06A4601C03474E00B48DD1 /* BXTabView.swift */; };
-		3E06A4631C0347A000B48DD1 /* BXViewPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E06A4621C0347A000B48DD1 /* BXViewPagerViewController.swift */; };
+		399C9A85F0E01FE51613D575DC36B6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB07F54204BAFAE300703CF2E73F889 /* Foundation.framework */; };
+		482576968A2250C1FAEFFFDA359958BA /* PinAutoLayout.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9881306FB39F8C57F8BAC5D839062588 /* PinAutoLayout.bundle */; };
+		4AB7228D0F73663D43AC5CD4A189F58B /* PinAutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04774F33ADAEF191967119DA78A4E6F7 /* PinAutoLayout.framework */; };
+		4BD871ABE6CE03E23EBCA767CF80CAC6 /* BXViewPager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4FC66752ADEC27BBE11D3B8B186B717E /* BXViewPager.bundle */; };
+		511FFC75F67081CB70E565775650CBF8 /* PinAutoLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 94F7A4AE0426476C947A70C7B4025C42 /* PinAutoLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AE061635905A047C7C9FA1B4F1F26D6 /* Pods-BXViewPager_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 53DD6F0A42D3AB41F16B7BA432A62F9C /* Pods-BXViewPager_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		736E82312D4DBDFE7D042A7B66791BA2 /* UIViewController+PinAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE830C2CDECF97EE5ED57A6E544B2FB /* UIViewController+PinAutoLayout.swift */; };
-		7B16957995DFEFF335E623263326B5ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB07F54204BAFAE300703CF2E73F889 /* Foundation.framework */; };
-		7BE7620ABD3D980B86AD4D1B0E421399 /* BXViewPager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F074E16793502D1898193FE5CB105606 /* BXViewPager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8850E19E7646A1E4D589EDFCA98C126F /* PinAutoLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E689C14E2C9F549430AF1A99A09226 /* PinAutoLayout-dummy.m */; };
-		9EB909073871A0AB9DCF4E179607717A /* UIView+PinAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B39C87B7AF3707E2D86B298ACC3B4A /* UIView+PinAutoLayout.swift */; };
-		A18461E8A4806E3843D0F64FA303632A /* BXViewPager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4FC66752ADEC27BBE11D3B8B186B717E /* BXViewPager.bundle */; };
-		A41AAF55732B9FDC05ED2EEE4E68768D /* PinAutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04774F33ADAEF191967119DA78A4E6F7 /* PinAutoLayout.framework */; };
-		B9C4685CBD30AFCDC1A79D180003DCED /* UIView+LinearAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27E0E9663D1C0B9B74EB5837417B9F /* UIView+LinearAutoLayout.swift */; };
-		C74B294C816E729D0E2CEE07B3919D1A /* BXViewPager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3EF2FA55DE4809FDA1DCF23C4D2863B /* BXViewPager-dummy.m */; };
+		908AF504B2FE3ED9CE42396DC9375B81 /* UIView+PinAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B39C87B7AF3707E2D86B298ACC3B4A /* UIView+PinAutoLayout.swift */; };
+		C410A146491A10DF40242C2212C76305 /* PinAutoLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E689C14E2C9F549430AF1A99A09226 /* PinAutoLayout-dummy.m */; };
+		C50979981D824E10DBDE13B3801F1EF1 /* BXViewPager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F074E16793502D1898193FE5CB105606 /* BXViewPager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6B9B8AB78D46F077CD8057FB7BFE124 /* UIViewController+PinAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE830C2CDECF97EE5ED57A6E544B2FB /* UIViewController+PinAutoLayout.swift */; };
+		C8273F375D3B50B0AD32112421BA8CFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB07F54204BAFAE300703CF2E73F889 /* Foundation.framework */; };
 		C841D505E7B95741943578703AF3E1CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB07F54204BAFAE300703CF2E73F889 /* Foundation.framework */; };
+		CC5D48781731B9EB500C029C13EB3BB3 /* BXTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A89405A57C1049BFD38283BAEA9B2B5 /* BXTabViewCell.swift */; };
+		D52586F3FDE1B20956AEF1DEA9201333 /* UIView+LinearAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E27E0E9663D1C0B9B74EB5837417B9F /* UIView+LinearAutoLayout.swift */; };
+		D5A9E562E7F518FAEDBDBF6846F43AA4 /* BXViewPager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3EF2FA55DE4809FDA1DCF23C4D2863B /* BXViewPager-dummy.m */; };
 		DCB23101E3CCF1A5C55DF792E9D502B9 /* Pods-BXViewPager_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 679E0DA8B1C2C6AA8468A23C9ADECCB1 /* Pods-BXViewPager_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F74FAE23F454727F87FBD39EE5BE4094 /* PinAutoLayout.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9881306FB39F8C57F8BAC5D839062588 /* PinAutoLayout.bundle */; };
-		F9610137257100CE37CE8392A2218F3B /* BXTabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D5CB54E3D6BE114228A5D9BEBC4B5 /* BXTabLayout.swift */; };
+		DD5E84EF6FCD627E9CF54468EFC62944 /* BXTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A23BF122E3C759DF1B2B909E9F56F6 /* BXTabView.swift */; };
+		E25D72CA55416ACB556A442D8CCDA9B2 /* BXTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAEC0EDAF6F1543A08C00536F9DAF6D /* BXTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,49 +38,49 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CB6B33D51D011BCCE6DFBD7BDEB5FCA6;
+			remoteGlobalIDString = 795DA26FA00BA34B34E29600E0619FF8;
 			remoteInfo = BXViewPager;
-		};
-		333D4C4EFC1C9A1DE6DCFB0B639DFF61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D19440FBC7774F6DAF5B376F279A6381;
-			remoteInfo = PinAutoLayout;
 		};
 		4CC9E5EF581D617D7385821D7A781706 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D19440FBC7774F6DAF5B376F279A6381;
+			remoteGlobalIDString = A92C43BB0C5D2E79752ABEC3A06EAB67;
 			remoteInfo = PinAutoLayout;
 		};
 		58C7277A7EC6915FBE22F5983C9F4827 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CB6B33D51D011BCCE6DFBD7BDEB5FCA6;
+			remoteGlobalIDString = 795DA26FA00BA34B34E29600E0619FF8;
 			remoteInfo = BXViewPager;
 		};
-		625A5743772F2E61640495571D5C5401 /* PBXContainerItemProxy */ = {
+		7B9556ECFFBAD8D1524D3EADAC5C2CFD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CF231FFDEC14B3C638C3521DF51FACF5;
+			remoteGlobalIDString = 109E21193A48ED541910973332545463;
 			remoteInfo = "BXViewPager-BXViewPager";
 		};
-		AFA7B9135F241D1FD68ED6C6CAA6EDFC /* PBXContainerItemProxy */ = {
+		8DEEB2A823F94274ACDAE9979383EA14 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 404A6FD42ED21C8AD138BEBEDA0D32D6;
+			remoteGlobalIDString = D8ECE1DE5A0CB89F9B662E10963F8330;
 			remoteInfo = "PinAutoLayout-PinAutoLayout";
+		};
+		A3B8AA985073CA93515FA0D70EB7D3E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A92C43BB0C5D2E79752ABEC3A06EAB67;
+			remoteInfo = PinAutoLayout;
 		};
 		FD069F8882A8D4F984DBB8D6D62C9AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D19440FBC7774F6DAF5B376F279A6381;
+			remoteGlobalIDString = A92C43BB0C5D2E79752ABEC3A06EAB67;
 			remoteInfo = PinAutoLayout;
 		};
 /* End PBXContainerItemProxy section */
@@ -86,7 +88,9 @@
 /* Begin PBXFileReference section */
 		043F981D51730E2F93145F9B58285A85 /* Pods-BXViewPager_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BXViewPager_Example-resources.sh"; sourceTree = "<group>"; };
 		04774F33ADAEF191967119DA78A4E6F7 /* PinAutoLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PinAutoLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		054BE5024BCCEA353E5112490BB4AC6D /* BXTabLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BXTabLayout.swift; sourceTree = "<group>"; };
 		0883741CE74D3F7FEBCE7F944C05F88B /* Pods_BXViewPager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BXViewPager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A89405A57C1049BFD38283BAEA9B2B5 /* BXTabViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BXTabViewCell.swift; sourceTree = "<group>"; };
 		198F067543F899A2482796375EF53096 /* Pods-BXViewPager_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BXViewPager_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		20D9614830A9500D56220D3270CBF4B1 /* PinAutoLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PinAutoLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		219B0572383CB2C979EF5866D9ECA295 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,9 +99,7 @@
 		37115D26063A4065D0CD06140BAAF41A /* Pods-BXViewPager_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BXViewPager_Tests.modulemap"; sourceTree = "<group>"; };
 		39463CFE66B8E063B3A248F16F933380 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B9B4C21A2BBE395AD19E023131EA5DE /* BXViewPager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BXViewPager-prefix.pch"; sourceTree = "<group>"; };
-		3E06A45E1C03473500B48DD1 /* BXTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BXTab.swift; sourceTree = "<group>"; };
-		3E06A4601C03474E00B48DD1 /* BXTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BXTabView.swift; sourceTree = "<group>"; };
-		3E06A4621C0347A000B48DD1 /* BXViewPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BXViewPagerViewController.swift; sourceTree = "<group>"; };
+		3DC0C72F054FF4FFA7D5C3BA5F1D7BE3 /* BXTab.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BXTab.swift; sourceTree = "<group>"; };
 		3EEA2632833E46D14D9FA62600037E49 /* Pods-BXViewPager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BXViewPager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E3002B5D7BF4D2C98D00635BA39B9F7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FC66752ADEC27BBE11D3B8B186B717E /* BXViewPager.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BXViewPager.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,13 +116,13 @@
 		973CB9B560DC6DD37DFBF3C7F73334FC /* BXViewPager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BXViewPager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9881306FB39F8C57F8BAC5D839062588 /* PinAutoLayout.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinAutoLayout.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		99517B7E4FCCD2846F35B264FC4C3484 /* Pods-BXViewPager_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BXViewPager_Example.modulemap"; sourceTree = "<group>"; };
-		9D9D5CB54E3D6BE114228A5D9BEBC4B5 /* BXTabLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BXTabLayout.swift; sourceTree = "<group>"; };
 		A3EF2FA55DE4809FDA1DCF23C4D2863B /* BXViewPager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BXViewPager-dummy.m"; sourceTree = "<group>"; };
 		B2A93EA2C051CA79C2583AEAF3EC1738 /* Pods-BXViewPager_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BXViewPager_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B5693EF701DEEF0559B36BE1B15DC68C /* Pods-BXViewPager_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BXViewPager_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BF7167A110F52398A71F501E9B302167 /* BXViewPager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BXViewPager.xcconfig; sourceTree = "<group>"; };
 		C428E5803CEAEAC23AABBEE64DAF1F40 /* Pods-BXViewPager_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BXViewPager_Example-frameworks.sh"; sourceTree = "<group>"; };
+		C6A23BF122E3C759DF1B2B909E9F56F6 /* BXTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BXTabView.swift; sourceTree = "<group>"; };
 		CA974BFC8F814243FA8B736DFC529912 /* Pods-BXViewPager_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BXViewPager_Tests-dummy.m"; sourceTree = "<group>"; };
 		CB6008A525BE8C82AA2AAD4AF9D3D579 /* PinAutoLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PinAutoLayout.modulemap; sourceTree = "<group>"; };
 		CBEB0C1A04435F965131C1929C45761D /* Pods-BXViewPager_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BXViewPager_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -132,11 +134,28 @@
 		E80563EA64F76831BD66F52012ECA83F /* BXViewPager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BXViewPager.modulemap; sourceTree = "<group>"; };
 		EDB07F54204BAFAE300703CF2E73F889 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EE17868977C52598391730265884E698 /* Pods-BXViewPager_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BXViewPager_Example-dummy.m"; sourceTree = "<group>"; };
+		EF4BDD7656C6155E23043EA2AD950314 /* BXViewPagerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BXViewPagerViewController.swift; sourceTree = "<group>"; };
 		F074E16793502D1898193FE5CB105606 /* BXViewPager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BXViewPager-umbrella.h"; sourceTree = "<group>"; };
+		FFAEC0EDAF6F1543A08C00536F9DAF6D /* BXTabViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BXTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3A2F4C41D2A42864F1B435F66C002094 /* Frameworks */ = {
+		39420A198982D244E736C5FC76222515 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		509CD702CD78A78DB23CE7A5F629B2BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				399C9A85F0E01FE51613D575DC36B6F7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C1D3A1A9A0FFE9AACEC80CDBDD0E674 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -151,13 +170,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9AFC4C2DBB903BB6FC657EE657F990A0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B0EF7BBEC64420C7E56350F7436A070A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,20 +178,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA859DA4E9E8BB820F71ECC59294D312 /* Frameworks */ = {
+		D98C13E873E7C49F944535BA5476DF0A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B16957995DFEFF335E623263326B5ED /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD503337EE5B6221192E63F8CD819889 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0231F70FFD100AC5563BF68A1027DB74 /* Foundation.framework in Frameworks */,
-				A41AAF55732B9FDC05ED2EEE4E68768D /* PinAutoLayout.framework in Frameworks */,
+				C8273F375D3B50B0AD32112421BA8CFE /* Foundation.framework in Frameworks */,
+				4AB7228D0F73663D43AC5CD4A189F58B /* PinAutoLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,17 +226,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		14232B2B56F3A98488AF624B757C7E93 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				3E06A4621C0347A000B48DD1 /* BXViewPagerViewController.swift */,
-				3E06A4601C03474E00B48DD1 /* BXTabView.swift */,
-				3E06A45E1C03473500B48DD1 /* BXTab.swift */,
-				9D9D5CB54E3D6BE114228A5D9BEBC4B5 /* BXTabLayout.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		1607646CA2C00FA9558B1695179B2CEE /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,14 +243,6 @@
 				69F621B3CD572B373B3FDA7C578A09B8 /* Support Files */,
 			);
 			path = PinAutoLayout;
-			sourceTree = "<group>";
-		};
-		58EBF1CCC0DF12230A0D7DB283468948 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				14232B2B56F3A98488AF624B757C7E93 /* Classes */,
-			);
-			path = Pod;
 			sourceTree = "<group>";
 		};
 		69F621B3CD572B373B3FDA7C578A09B8 /* Support Files */ = {
@@ -286,6 +271,19 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/BXViewPager";
+			sourceTree = "<group>";
+		};
+		706F944E8621FD01025CC7C129648952 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3DC0C72F054FF4FFA7D5C3BA5F1D7BE3 /* BXTab.swift */,
+				054BE5024BCCEA353E5112490BB4AC6D /* BXTabLayout.swift */,
+				C6A23BF122E3C759DF1B2B909E9F56F6 /* BXTabView.swift */,
+				0A89405A57C1049BFD38283BAEA9B2B5 /* BXTabViewCell.swift */,
+				FFAEC0EDAF6F1543A08C00536F9DAF6D /* BXTabViewController.swift */,
+				EF4BDD7656C6155E23043EA2AD950314 /* BXViewPagerViewController.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -332,11 +330,19 @@
 		BCE65ED72D39F4901F4574FE2834B974 /* BXViewPager */ = {
 			isa = PBXGroup;
 			children = (
-				58EBF1CCC0DF12230A0D7DB283468948 /* Pod */,
+				C396DCB1AB0CDDC4D16B4A59C9A6D539 /* Pod */,
 				701785C204A865FD35FF29A6B810EF32 /* Support Files */,
 			);
 			name = BXViewPager;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		C396DCB1AB0CDDC4D16B4A59C9A6D539 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				706F944E8621FD01025CC7C129648952 /* Classes */,
+			);
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		CB754206654001AC78439A84B683B7F4 /* Pods-BXViewPager_Tests */ = {
@@ -385,22 +391,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		438FBC4492DE983DBBB8C22F42E7E31D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				043A1A23E247D3F4E910376075A1FA54 /* PinAutoLayout-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4AABC645D3BE3E69C44A0FBC25F49E3C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7BE7620ABD3D980B86AD4D1B0E421399 /* BXViewPager-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5D1F9C8660C9D9CD1D2A40385F07C110 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,24 +399,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7635D33D57B315490749A2066F40ABAB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C50979981D824E10DBDE13B3801F1EF1 /* BXViewPager-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BAFF4A7CD40DDD42FEF2FFCCDC69500 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				511FFC75F67081CB70E565775650CBF8 /* PinAutoLayout-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		404A6FD42ED21C8AD138BEBEDA0D32D6 /* PinAutoLayout-PinAutoLayout */ = {
+		109E21193A48ED541910973332545463 /* BXViewPager-BXViewPager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 842DCD206CA9F2C71EB228292633427D /* Build configuration list for PBXNativeTarget "PinAutoLayout-PinAutoLayout" */;
+			buildConfigurationList = 9EF89CE96DC48DB7DE5F0C7B4BE76651 /* Build configuration list for PBXNativeTarget "BXViewPager-BXViewPager" */;
 			buildPhases = (
-				03DC59115B29790E1F68414BF87AC972 /* Sources */,
-				3A2F4C41D2A42864F1B435F66C002094 /* Frameworks */,
-				6A05C975B5403D3324722CD275F5596E /* Resources */,
+				163C128D5BC5A40F649EC7EA200E890E /* Sources */,
+				39420A198982D244E736C5FC76222515 /* Frameworks */,
+				1913866014A4110F74EF96DEC4FFB661 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "PinAutoLayout-PinAutoLayout";
-			productName = "PinAutoLayout-PinAutoLayout";
-			productReference = 9881306FB39F8C57F8BAC5D839062588 /* PinAutoLayout.bundle */;
+			name = "BXViewPager-BXViewPager";
+			productName = "BXViewPager-BXViewPager";
+			productReference = 4FC66752ADEC27BBE11D3B8B186B717E /* BXViewPager.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		6B18C21C3EE88BABBB79826A3F61601F /* Pods-BXViewPager_Tests */ = {
@@ -448,61 +454,61 @@
 			productReference = 0883741CE74D3F7FEBCE7F944C05F88B /* Pods_BXViewPager_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CB6B33D51D011BCCE6DFBD7BDEB5FCA6 /* BXViewPager */ = {
+		795DA26FA00BA34B34E29600E0619FF8 /* BXViewPager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F187205DFD7640B8333800764C8E0D3 /* Build configuration list for PBXNativeTarget "BXViewPager" */;
+			buildConfigurationList = F06A2EE6A8E574AD79D70FA549B2E16A /* Build configuration list for PBXNativeTarget "BXViewPager" */;
 			buildPhases = (
-				E80A6458BC22EF0598A3C58D1D1E1AD2 /* Sources */,
-				FD503337EE5B6221192E63F8CD819889 /* Frameworks */,
-				A8A44AEAAD937CCA726B9D71C762E02A /* Resources */,
-				4AABC645D3BE3E69C44A0FBC25F49E3C /* Headers */,
+				60088C33B59B4AF15B1F7FBDD7628E03 /* Sources */,
+				D98C13E873E7C49F944535BA5476DF0A /* Frameworks */,
+				241FEE70DAB74CEBAA1BC65855C31DCF /* Resources */,
+				7635D33D57B315490749A2066F40ABAB /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D5571030198480300E33054BED1B177B /* PBXTargetDependency */,
-				C7432BF4E830498392F418AB33F87027 /* PBXTargetDependency */,
+				AC01CEF9AE9C3B353D4F30958117013F /* PBXTargetDependency */,
+				C5964726C9A8EA2A6E3598EC4D6F54D4 /* PBXTargetDependency */,
 			);
 			name = BXViewPager;
 			productName = BXViewPager;
 			productReference = 973CB9B560DC6DD37DFBF3C7F73334FC /* BXViewPager.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CF231FFDEC14B3C638C3521DF51FACF5 /* BXViewPager-BXViewPager */ = {
+		A92C43BB0C5D2E79752ABEC3A06EAB67 /* PinAutoLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 36E9A683846DE373608E35A2754150F8 /* Build configuration list for PBXNativeTarget "BXViewPager-BXViewPager" */;
+			buildConfigurationList = A2C4EAA51325673C8370D0F920F1849F /* Build configuration list for PBXNativeTarget "PinAutoLayout" */;
 			buildPhases = (
-				1654BD486A3AC9F317D3BE09F9DCCCD1 /* Sources */,
-				9AFC4C2DBB903BB6FC657EE657F990A0 /* Frameworks */,
-				4F6E0BFC5A845C6A839A4E33EB6F89F3 /* Resources */,
+				6C033EDE3C0EEA9E7EFF0D54DCA3542A /* Sources */,
+				509CD702CD78A78DB23CE7A5F629B2BF /* Frameworks */,
+				960985D50B918008976CA081E88FA5BE /* Resources */,
+				9BAFF4A7CD40DDD42FEF2FFCCDC69500 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "BXViewPager-BXViewPager";
-			productName = "BXViewPager-BXViewPager";
-			productReference = 4FC66752ADEC27BBE11D3B8B186B717E /* BXViewPager.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		D19440FBC7774F6DAF5B376F279A6381 /* PinAutoLayout */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C2CF47345075E53037359920EDCDB04F /* Build configuration list for PBXNativeTarget "PinAutoLayout" */;
-			buildPhases = (
-				E052B314F938D4B85B46D0ADD04F6387 /* Sources */,
-				EA859DA4E9E8BB820F71ECC59294D312 /* Frameworks */,
-				79A29338B92BF9F38C030682877FCF14 /* Resources */,
-				438FBC4492DE983DBBB8C22F42E7E31D /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0D4638917D0D40231C8DD4D22BC83082 /* PBXTargetDependency */,
+				A3BB65CCD5A0DF21AF5D04955A9C2A69 /* PBXTargetDependency */,
 			);
 			name = PinAutoLayout;
 			productName = PinAutoLayout;
 			productReference = 20D9614830A9500D56220D3270CBF4B1 /* PinAutoLayout.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		D8ECE1DE5A0CB89F9B662E10963F8330 /* PinAutoLayout-PinAutoLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 476470A8D4A676262E2291CB315BFC03 /* Build configuration list for PBXNativeTarget "PinAutoLayout-PinAutoLayout" */;
+			buildPhases = (
+				9FBAA6F05C8D5531611C9A4B512D1FF0 /* Sources */,
+				6C1D3A1A9A0FFE9AACEC80CDBDD0E674 /* Frameworks */,
+				76ECB992D4807B0A9AE9D1A64897FBCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PinAutoLayout-PinAutoLayout";
+			productName = "PinAutoLayout-PinAutoLayout";
+			productReference = 9881306FB39F8C57F8BAC5D839062588 /* PinAutoLayout.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 		FE03DF5FC481AAAAFA0CEE1438FAA0FB /* Pods-BXViewPager_Example */ = {
 			isa = PBXNativeTarget;
@@ -544,10 +550,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB6B33D51D011BCCE6DFBD7BDEB5FCA6 /* BXViewPager */,
-				CF231FFDEC14B3C638C3521DF51FACF5 /* BXViewPager-BXViewPager */,
-				D19440FBC7774F6DAF5B376F279A6381 /* PinAutoLayout */,
-				404A6FD42ED21C8AD138BEBEDA0D32D6 /* PinAutoLayout-PinAutoLayout */,
+				795DA26FA00BA34B34E29600E0619FF8 /* BXViewPager */,
+				109E21193A48ED541910973332545463 /* BXViewPager-BXViewPager */,
+				A92C43BB0C5D2E79752ABEC3A06EAB67 /* PinAutoLayout */,
+				D8ECE1DE5A0CB89F9B662E10963F8330 /* PinAutoLayout-PinAutoLayout */,
 				FE03DF5FC481AAAAFA0CEE1438FAA0FB /* Pods-BXViewPager_Example */,
 				6B18C21C3EE88BABBB79826A3F61601F /* Pods-BXViewPager_Tests */,
 			);
@@ -555,47 +561,72 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4F6E0BFC5A845C6A839A4E33EB6F89F3 /* Resources */ = {
+		1913866014A4110F74EF96DEC4FFB661 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A05C975B5403D3324722CD275F5596E /* Resources */ = {
+		241FEE70DAB74CEBAA1BC65855C31DCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BD871ABE6CE03E23EBCA767CF80CAC6 /* BXViewPager.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76ECB992D4807B0A9AE9D1A64897FBCC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79A29338B92BF9F38C030682877FCF14 /* Resources */ = {
+		960985D50B918008976CA081E88FA5BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F74FAE23F454727F87FBD39EE5BE4094 /* PinAutoLayout.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A8A44AEAAD937CCA726B9D71C762E02A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A18461E8A4806E3843D0F64FA303632A /* BXViewPager.bundle in Resources */,
+				482576968A2250C1FAEFFFDA359958BA /* PinAutoLayout.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		03DC59115B29790E1F68414BF87AC972 /* Sources */ = {
+		163C128D5BC5A40F649EC7EA200E890E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1654BD486A3AC9F317D3BE09F9DCCCD1 /* Sources */ = {
+		60088C33B59B4AF15B1F7FBDD7628E03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				171361333818C72431256FD0B5282F67 /* BXTab.swift in Sources */,
+				2BEADF1222D92EB1D31C413E9C455367 /* BXTabLayout.swift in Sources */,
+				DD5E84EF6FCD627E9CF54468EFC62944 /* BXTabView.swift in Sources */,
+				CC5D48781731B9EB500C029C13EB3BB3 /* BXTabViewCell.swift in Sources */,
+				E25D72CA55416ACB556A442D8CCDA9B2 /* BXTabViewController.swift in Sources */,
+				D5A9E562E7F518FAEDBDBF6846F43AA4 /* BXViewPager-dummy.m in Sources */,
+				145DB4EDBF23C528DBCBBA9722C3E3CD /* BXViewPagerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C033EDE3C0EEA9E7EFF0D54DCA3542A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C410A146491A10DF40242C2212C76305 /* PinAutoLayout-dummy.m in Sources */,
+				D52586F3FDE1B20956AEF1DEA9201333 /* UIView+LinearAutoLayout.swift in Sources */,
+				908AF504B2FE3ED9CE42396DC9375B81 /* UIView+PinAutoLayout.swift in Sources */,
+				C6B9B8AB78D46F077CD8057FB7BFE124 /* UIViewController+PinAutoLayout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FBAA6F05C8D5531611C9A4B512D1FF0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -610,29 +641,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E052B314F938D4B85B46D0ADD04F6387 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8850E19E7646A1E4D589EDFCA98C126F /* PinAutoLayout-dummy.m in Sources */,
-				B9C4685CBD30AFCDC1A79D180003DCED /* UIView+LinearAutoLayout.swift in Sources */,
-				9EB909073871A0AB9DCF4E179607717A /* UIView+PinAutoLayout.swift in Sources */,
-				736E82312D4DBDFE7D042A7B66791BA2 /* UIViewController+PinAutoLayout.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E80A6458BC22EF0598A3C58D1D1E1AD2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F9610137257100CE37CE8392A2218F3B /* BXTabLayout.swift in Sources */,
-				C74B294C816E729D0E2CEE07B3919D1A /* BXViewPager-dummy.m in Sources */,
-				3E06A45F1C03473500B48DD1 /* BXTab.swift in Sources */,
-				3E06A4631C0347A000B48DD1 /* BXViewPagerViewController.swift in Sources */,
-				3E06A4611C03474E00B48DD1 /* BXTabView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EC48DFD6EC1CF6378654CAE628923944 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -644,66 +652,54 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0D4638917D0D40231C8DD4D22BC83082 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "PinAutoLayout-PinAutoLayout";
-			target = 404A6FD42ED21C8AD138BEBEDA0D32D6 /* PinAutoLayout-PinAutoLayout */;
-			targetProxy = AFA7B9135F241D1FD68ED6C6CAA6EDFC /* PBXContainerItemProxy */;
-		};
 		633AB5FF711264BA9328FEABABACD6D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BXViewPager;
-			target = CB6B33D51D011BCCE6DFBD7BDEB5FCA6 /* BXViewPager */;
+			target = 795DA26FA00BA34B34E29600E0619FF8 /* BXViewPager */;
 			targetProxy = 0A2EA19E94E09639510861A165E4F366 /* PBXContainerItemProxy */;
+		};
+		A3BB65CCD5A0DF21AF5D04955A9C2A69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PinAutoLayout-PinAutoLayout";
+			target = D8ECE1DE5A0CB89F9B662E10963F8330 /* PinAutoLayout-PinAutoLayout */;
+			targetProxy = 8DEEB2A823F94274ACDAE9979383EA14 /* PBXContainerItemProxy */;
+		};
+		AC01CEF9AE9C3B353D4F30958117013F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BXViewPager-BXViewPager";
+			target = 109E21193A48ED541910973332545463 /* BXViewPager-BXViewPager */;
+			targetProxy = 7B9556ECFFBAD8D1524D3EADAC5C2CFD /* PBXContainerItemProxy */;
 		};
 		B20BA3E34F6D0276C85623D757E4A20D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PinAutoLayout;
-			target = D19440FBC7774F6DAF5B376F279A6381 /* PinAutoLayout */;
+			target = A92C43BB0C5D2E79752ABEC3A06EAB67 /* PinAutoLayout */;
 			targetProxy = FD069F8882A8D4F984DBB8D6D62C9AA8 /* PBXContainerItemProxy */;
 		};
 		B72DA502E7BD01267A4BD8AAA9467086 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BXViewPager;
-			target = CB6B33D51D011BCCE6DFBD7BDEB5FCA6 /* BXViewPager */;
+			target = 795DA26FA00BA34B34E29600E0619FF8 /* BXViewPager */;
 			targetProxy = 58C7277A7EC6915FBE22F5983C9F4827 /* PBXContainerItemProxy */;
 		};
-		C7432BF4E830498392F418AB33F87027 /* PBXTargetDependency */ = {
+		C5964726C9A8EA2A6E3598EC4D6F54D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PinAutoLayout;
-			target = D19440FBC7774F6DAF5B376F279A6381 /* PinAutoLayout */;
-			targetProxy = 333D4C4EFC1C9A1DE6DCFB0B639DFF61 /* PBXContainerItemProxy */;
-		};
-		D5571030198480300E33054BED1B177B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "BXViewPager-BXViewPager";
-			target = CF231FFDEC14B3C638C3521DF51FACF5 /* BXViewPager-BXViewPager */;
-			targetProxy = 625A5743772F2E61640495571D5C5401 /* PBXContainerItemProxy */;
+			target = A92C43BB0C5D2E79752ABEC3A06EAB67 /* PinAutoLayout */;
+			targetProxy = A3B8AA985073CA93515FA0D70EB7D3E3 /* PBXContainerItemProxy */;
 		};
 		D5F9E9474E2BE86B2E5F106EEB3D4A09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PinAutoLayout;
-			target = D19440FBC7774F6DAF5B376F279A6381 /* PinAutoLayout */;
+			target = A92C43BB0C5D2E79752ABEC3A06EAB67 /* PinAutoLayout */;
 			targetProxy = 4CC9E5EF581D617D7385821D7A781706 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0415921F32909EF2A5D229226ADAEAF9 /* Debug */ = {
+		14EFB9B2360BEAAA5BB6CC9D3935282F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF7167A110F52398A71F501E9B302167 /* BXViewPager.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = BXViewPager;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		07143A509FF10764635B03934984AF1E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A384A42ED35DF3BA2947540581A7DEF /* PinAutoLayout.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -712,14 +708,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PinAutoLayout/PinAutoLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PinAutoLayout/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/BXViewPager/BXViewPager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BXViewPager/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PinAutoLayout/PinAutoLayout.modulemap";
+				MODULEMAP_FILE = "Target Support Files/BXViewPager/BXViewPager.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = PinAutoLayout;
+				PRODUCT_NAME = BXViewPager;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -728,33 +724,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		1A976D3188960AEEBE8B6F70053AE94E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A384A42ED35DF3BA2947540581A7DEF /* PinAutoLayout.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PinAutoLayout/PinAutoLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PinAutoLayout/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PinAutoLayout/PinAutoLayout.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PinAutoLayout;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		27C5A8C912BA4AA4CB163D61D42084F2 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -786,21 +755,9 @@
 			};
 			name = Release;
 		};
-		42766DA08A86A4B36950BBCA86F9BCBB /* Debug */ = {
+		6470F4D2C3E27FDB9ED08528B2A3EB02 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A384A42ED35DF3BA2947540581A7DEF /* PinAutoLayout.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = PinAutoLayout;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		5B6F1BBC0855963995CBEED9D3459F92 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF7167A110F52398A71F501E9B302167 /* BXViewPager.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -809,23 +766,33 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/BXViewPager/BXViewPager-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BXViewPager/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/PinAutoLayout/PinAutoLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PinAutoLayout/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BXViewPager/BXViewPager.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
-				PRODUCT_NAME = BXViewPager;
+				MODULEMAP_FILE = "Target Support Files/PinAutoLayout/PinAutoLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PinAutoLayout;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
+		};
+		6486888405F752DBE9E9EA2DAB2922A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF7167A110F52398A71F501E9B302167 /* BXViewPager.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = BXViewPager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		76C5AA99A42BA926D1B7DB4204C8FD63 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -858,12 +825,51 @@
 			};
 			name = Debug;
 		};
-		7D424AF7A7987AAD3534D6FB501190FA /* Release */ = {
+		7E6B6FED22F8BAEF06662864699E341C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A384A42ED35DF3BA2947540581A7DEF /* PinAutoLayout.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = PinAutoLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		8715D291EE569E020F28A26F4751936E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF7167A110F52398A71F501E9B302167 /* BXViewPager.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BXViewPager/BXViewPager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BXViewPager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BXViewPager/BXViewPager.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = BXViewPager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		89BBB76087D950E59D0755059757005A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A384A42ED35DF3BA2947540581A7DEF /* PinAutoLayout.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = PinAutoLayout;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -970,6 +976,18 @@
 			};
 			name = Debug;
 		};
+		C1318E0C2077207F1F7A7C1F2AF97045 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF7167A110F52398A71F501E9B302167 /* BXViewPager.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = BXViewPager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		E39CD1E764776175CB82EEC82A6C9948 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1004,9 +1022,9 @@
 			};
 			name = Release;
 		};
-		EBED0FD6245652318F9DBFE869ACBFB8 /* Release */ = {
+		FE6278909181F3390FDA5000D9D51AE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF7167A110F52398A71F501E9B302167 /* BXViewPager.xcconfig */;
+			baseConfigurationReference = 7A384A42ED35DF3BA2947540581A7DEF /* PinAutoLayout.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1015,33 +1033,22 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/BXViewPager/BXViewPager-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BXViewPager/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/PinAutoLayout/PinAutoLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PinAutoLayout/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BXViewPager/BXViewPager.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = BXViewPager;
+				MODULEMAP_FILE = "Target Support Files/PinAutoLayout/PinAutoLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PinAutoLayout;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
-		};
-		F562EA362306547D7103DB28415EBDEF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A384A42ED35DF3BA2947540581A7DEF /* PinAutoLayout.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = PinAutoLayout;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1055,20 +1062,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		36E9A683846DE373608E35A2754150F8 /* Build configuration list for PBXNativeTarget "BXViewPager-BXViewPager" */ = {
+		476470A8D4A676262E2291CB315BFC03 /* Build configuration list for PBXNativeTarget "PinAutoLayout-PinAutoLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0415921F32909EF2A5D229226ADAEAF9 /* Debug */,
-				7D424AF7A7987AAD3534D6FB501190FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3F187205DFD7640B8333800764C8E0D3 /* Build configuration list for PBXNativeTarget "BXViewPager" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5B6F1BBC0855963995CBEED9D3459F92 /* Debug */,
-				EBED0FD6245652318F9DBFE869ACBFB8 /* Release */,
+				7E6B6FED22F8BAEF06662864699E341C /* Debug */,
+				89BBB76087D950E59D0755059757005A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1082,20 +1080,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		842DCD206CA9F2C71EB228292633427D /* Build configuration list for PBXNativeTarget "PinAutoLayout-PinAutoLayout" */ = {
+		9EF89CE96DC48DB7DE5F0C7B4BE76651 /* Build configuration list for PBXNativeTarget "BXViewPager-BXViewPager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42766DA08A86A4B36950BBCA86F9BCBB /* Debug */,
-				F562EA362306547D7103DB28415EBDEF /* Release */,
+				C1318E0C2077207F1F7A7C1F2AF97045 /* Debug */,
+				6486888405F752DBE9E9EA2DAB2922A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C2CF47345075E53037359920EDCDB04F /* Build configuration list for PBXNativeTarget "PinAutoLayout" */ = {
+		A2C4EAA51325673C8370D0F920F1849F /* Build configuration list for PBXNativeTarget "PinAutoLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07143A509FF10764635B03934984AF1E /* Debug */,
-				1A976D3188960AEEBE8B6F70053AE94E /* Release */,
+				FE6278909181F3390FDA5000D9D51AE7 /* Debug */,
+				6470F4D2C3E27FDB9ED08528B2A3EB02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1105,6 +1103,15 @@
 			buildConfigurations = (
 				9806E0DD3D4C4902FF4F170736B56B94 /* Debug */,
 				27C5A8C912BA4AA4CB163D61D42084F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F06A2EE6A8E574AD79D70FA549B2E16A /* Build configuration list for PBXNativeTarget "BXViewPager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14EFB9B2360BEAAA5BB6CC9D3935282F /* Debug */,
+				8715D291EE569E020F28A26F4751936E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

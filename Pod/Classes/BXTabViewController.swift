@@ -10,65 +10,6 @@ import UIKit
 import PinAutoLayout
 
 
-// MARK: UICollectionViewDataSource
-extension BXTabViewController:UICollectionViewDataSource{
-  
-  public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-    return 1
-  }
-  
-  public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return tabs.count
-  }
-  
-  public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let tab = tabAtIndexPath(indexPath)
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(bx_tab_reuse_identifier, forIndexPath: indexPath) as! BXTabView
-    cell.bind(tab)
-    return cell
-  }
-  
-}
-
-// MARK BXViewPagerViewController - Helper
-
-extension BXTabViewController{
-  
-  //  public func addTab(tab:BXTab,index:Int = 0,setSelected:Bool = false){
-  //    tabs.insert(tab, atIndex: index)
-  //    tabLayout.reloadData()
-  //    if(setSelected){
-  //      selectTabAtIndex(index)
-  //    }
-  //
-  //  }
-  //
-  public func selectTabAtIndex(index:Int){
-    if tabs.isEmpty{
-      return
-    }
-    let indexPath = NSIndexPath(forItem: index, inSection: 0)
-    tabLayout.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: UICollectionViewScrollPosition.CenteredHorizontally)
-  }
-  
-  public func tabAtIndexPath(indexPath:NSIndexPath) -> BXTab{
-    return tabs[indexPath.item]
-  }
-  
-  public var numberOfTabs:Int{
-    return tabs.count
-  }
-}
-
-// MARK: UICollectionViewDelegateFlowLayout
-extension BXTabViewController:UICollectionViewDelegateFlowLayout{
-  public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    showPageAtIndex(indexPath.item)
-  }
-}
-
-
-
 
 public class BXTabViewController: UIViewController,UIGestureRecognizerDelegate{
   public var viewControllers: [UIViewController] = []{
@@ -97,22 +38,22 @@ public class BXTabViewController: UIViewController,UIGestureRecognizerDelegate{
   //  weak public var delegate: UITabBarControllerDelegate?
   
   
-  private var tabLayout:UICollectionView!
+  private lazy var tabLayout : BXTabLayout = {
+    let tabLayout = BXTabLayout()
+    tabLayout.showsHorizontalScrollIndicator = false
+    tabLayout.showsVerticalScrollIndicator = false
+    tabLayout.scrollEnabled = true
+    tabLayout.backgroundColor = UIColor.whiteColor()
+    return tabLayout
+  }()
+  
+  public var tabLayoutHeight:CGFloat = TabConstants.defaultHeight
+  
   private var containerView:UIView!
   
-  private let flowLayout:UICollectionViewFlowLayout = {
-    let flowLayout = UICollectionViewFlowLayout()
-    flowLayout.minimumInteritemSpacing = 0// TabConstants.minInteritemSpacing
-    flowLayout.itemSize = CGSize(width:TabConstants.minItemWidth,height:TabConstants.defaultHeight)
-    flowLayout.minimumLineSpacing = 0
-    flowLayout.sectionInset = UIEdgeInsetsZero
-    //      flowLayout.estimatedItemSize = flowLayout.itemSize
-    flowLayout.scrollDirection = .Vertical
-    return flowLayout
-  }()
-  public var didSelectedTab: ( (BXTab) -> Void )?
-  var tabs: [BXTab] = []
+  public private(set) var pageController:UIPageViewController!
   
+  public var didSelectedTab: ( (BXTab) -> Void )?
   
   public init(){
     super.init(nibName: nil, bundle: nil)
@@ -126,37 +67,27 @@ public class BXTabViewController: UIViewController,UIGestureRecognizerDelegate{
   }
   
   func updateTabs(){
-    tabs.removeAll()
+    var tabs:[BXTab] = []
     for (index,vc) in self.viewControllers.enumerate() {
       let tab = BXTab(text: vc.title)
       tab.position = index
       tabs.append(tab)
     }
+    tabLayout.updateTabs(tabs)
   }
   
   
   public override func loadView() {
     super.loadView()
     containerView = UIView()
-    
-    tabLayout = {
-      let tabLayout = UICollectionView(frame:CGRect(x: 0, y: 0, width: 320, height: TabConstants.defaultHeight + 4), collectionViewLayout: flowLayout)
-      tabLayout.showsHorizontalScrollIndicator = false
-      tabLayout.showsVerticalScrollIndicator = false
-      tabLayout.scrollEnabled = true
-      tabLayout.backgroundColor = UIColor.whiteColor()
-      //        tabLayout.backgroundColor = UIColor.purpleColor()
-      return tabLayout
-      }()
-    tabLayout.registerClass(BXTabView.self, forCellWithReuseIdentifier: bx_tab_reuse_identifier)
-    tabLayout.delegate = self
-    tabLayout.dataSource = self
+    pageController =  UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+    tabLayout.registerClass(BXTabView.self)
     //
     self.view.addSubview(tabLayout)
     tabLayout.translatesAutoresizingMaskIntoConstraints = false
     pinTopLayoutGuide(tabLayout)
     tabLayout.pinHorizontal(0)
-    tabLayout.pinHeight(TabConstants.defaultHeight)
+    tabLayout.pinHeight(tabLayoutHeight)
     
     
     self.view.addSubview(containerView)
@@ -180,6 +111,10 @@ public class BXTabViewController: UIViewController,UIGestureRecognizerDelegate{
   override public func viewDidLoad() {
     super.viewDidLoad()
     NSLog("\(__FUNCTION__)")
+    tabLayout.didSelectedTab = {
+      tab in
+      self.showPageAtIndex(tab.position)
+    }
   }
   
   private var hasSelectAny = false
@@ -190,19 +125,12 @@ public class BXTabViewController: UIViewController,UIGestureRecognizerDelegate{
     }
     hasSelectAny = true
     recalculateItemSize()
-    selectTabAtIndex(0)
+    tabLayout.selectTabAtIndex(0)
     showPageAtIndex(0)
   }
   
   func recalculateItemSize(){
-    let sectionInset = flowLayout.sectionInset
-    let totalWidth = self.view.bounds.width - flowLayout.minimumInteritemSpacing - sectionInset.left - sectionInset.right
-    let itemCount = viewControllers.count
-    let itemWidth = floor(totalWidth / CGFloat(itemCount) )
-    let itemHeight = flowLayout.itemSize.height
-    let itemSize = CGSize(width: itemWidth, height: itemHeight)
-    flowLayout.itemSize = itemSize
-    
+   tabLayout.updateItemSize()
   }
   
   public override func viewWillLayoutSubviews() {
@@ -213,12 +141,7 @@ public class BXTabViewController: UIViewController,UIGestureRecognizerDelegate{
   public override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     NSLog("\(__FUNCTION__) \(view.frame)")
-    let space = flowLayout.minimumInteritemSpacing * CGFloat(numberOfTabs - 1)
-    let availableWidth = tabLayout.bounds.width - space
-    let avgWidth = availableWidth / CGFloat(numberOfTabs)
-    let itemWidth = max(avgWidth,TabConstants.minItemWidth)
-    let itemSize = CGSize(width: itemWidth, height: TabConstants.defaultHeight)
-    flowLayout.itemSize = itemSize
+    tabLayout.updateItemSize()
   }
   
   public override func viewWillAppear(animated: Bool) {
