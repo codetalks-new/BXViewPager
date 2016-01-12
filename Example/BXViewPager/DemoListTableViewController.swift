@@ -12,6 +12,7 @@ import BXViewPager
 class DemoListTableViewController: UITableViewController {
     @IBOutlet weak var simpleDemo: UITableViewCell!
     @IBOutlet weak var simpleTabLayout: UITableViewCell!
+  @IBOutlet weak var tabVCCell: UITableViewCell!
    
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -20,12 +21,24 @@ class DemoListTableViewController: UITableViewController {
         case simpleDemo:
             showSimpleDemo()
             break
+        case tabVCCell:
+          showSimpleTabVC()
         default:
             break
         }
     }
     
-    
+  func showSimpleTabVC(){
+    var vcs = [UIViewController]()
+    for index in 1...5 {
+      let vc = ShowTitleViewController(title: "Tab \(index)")
+      vcs.append(vc)
+    }
+    let viewPagerVC = BXTabViewController()
+    viewPagerVC.setViewControllers(vcs, animated: true)
+    showViewController(viewPagerVC, sender: self)
+  }
+  
     func showSimpleDemo(){
         var vcs = [UIViewController]()
         for index in 1...5 {

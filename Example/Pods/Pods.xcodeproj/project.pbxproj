@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		2BEADF1222D92EB1D31C413E9C455367 /* BXTabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054BE5024BCCEA353E5112490BB4AC6D /* BXTabLayout.swift */; };
 		2C80F7BC73E48E55B2272557D7289862 /* Pods-BXViewPager_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA974BFC8F814243FA8B736DFC529912 /* Pods-BXViewPager_Tests-dummy.m */; };
 		399C9A85F0E01FE51613D575DC36B6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB07F54204BAFAE300703CF2E73F889 /* Foundation.framework */; };
+		3E79B9661C455078002EFD7E /* BXTabLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D2D041C452D24006885BF /* BXTabLayoutViewController.swift */; };
 		482576968A2250C1FAEFFFDA359958BA /* PinAutoLayout.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9881306FB39F8C57F8BAC5D839062588 /* PinAutoLayout.bundle */; };
 		4AB7228D0F73663D43AC5CD4A189F58B /* PinAutoLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04774F33ADAEF191967119DA78A4E6F7 /* PinAutoLayout.framework */; };
 		4BD871ABE6CE03E23EBCA767CF80CAC6 /* BXViewPager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4FC66752ADEC27BBE11D3B8B186B717E /* BXViewPager.bundle */; };
@@ -100,6 +101,7 @@
 		39463CFE66B8E063B3A248F16F933380 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B9B4C21A2BBE395AD19E023131EA5DE /* BXViewPager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BXViewPager-prefix.pch"; sourceTree = "<group>"; };
 		3DC0C72F054FF4FFA7D5C3BA5F1D7BE3 /* BXTab.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BXTab.swift; sourceTree = "<group>"; };
+		3E8D2D041C452D24006885BF /* BXTabLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BXTabLayoutViewController.swift; sourceTree = "<group>"; };
 		3EEA2632833E46D14D9FA62600037E49 /* Pods-BXViewPager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BXViewPager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E3002B5D7BF4D2C98D00635BA39B9F7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FC66752ADEC27BBE11D3B8B186B717E /* BXViewPager.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BXViewPager.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +278,7 @@
 		706F944E8621FD01025CC7C129648952 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3E8D2D041C452D24006885BF /* BXTabLayoutViewController.swift */,
 				3DC0C72F054FF4FFA7D5C3BA5F1D7BE3 /* BXTab.swift */,
 				054BE5024BCCEA353E5112490BB4AC6D /* BXTabLayout.swift */,
 				C6A23BF122E3C759DF1B2B909E9F56F6 /* BXTabView.swift */,
@@ -539,7 +542,7 @@
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -605,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E79B9661C455078002EFD7E /* BXTabLayoutViewController.swift in Sources */,
 				171361333818C72431256FD0B5282F67 /* BXTab.swift in Sources */,
 				2BEADF1222D92EB1D31C413E9C455367 /* BXTabLayout.swift in Sources */,
 				DD5E84EF6FCD627E9CF54468EFC62944 /* BXTabView.swift in Sources */,
