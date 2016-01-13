@@ -57,7 +57,6 @@ public class BXTabLayoutViewController:UIViewController{
     }
   }
   
-
   
   func updateTabs(){
     if useCustomTabs{
