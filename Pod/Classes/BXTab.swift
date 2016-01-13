@@ -16,6 +16,7 @@ public class BXTab{
   public var icon:UIImage?
   public var text:String?
   public var contentDesc:String?
+  public var badgeValue:String?
   
   public var position = BXTab.INVALID_POSITION
   

@@ -45,6 +45,22 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
   let shadowView = UIView(frame:CGRectZero)
   let indicatorView = UIView(frame:CGRectZero)
   
+  public dynamic var showIndicator:Bool {
+    get{
+      return !indicatorView.hidden
+    }set{
+      indicatorView.hidden = !newValue
+    }
+  }
+  
+  public dynamic var showShadow:Bool{
+    get{
+      return !shadowView.hidden
+    }set{
+      shadowView.hidden = !newValue
+    }
+  }
+  
   
   override init(frame: CGRect) {
     super.init(frame: frame)

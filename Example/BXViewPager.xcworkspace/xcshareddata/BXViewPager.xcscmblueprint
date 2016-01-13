@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BEFFFE706DBA2F8FC3CEA9635D80C6C1CD3F9815",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BEFFFE706DBA2F8FC3CEA9635D80C6C1CD3F9815" : 0,
+    "21D3A8669552288A79C40C9CD77B826621D071DC" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DC22E146-0322-44DD-B28C-FFCB3A902A89",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BEFFFE706DBA2F8FC3CEA9635D80C6C1CD3F9815" : "BXViewPager\/",
+    "21D3A8669552288A79C40C9CD77B826621D071DC" : "BXForm\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BXViewPager",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/BXViewPager.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/banxi1988\/BXForm.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "21D3A8669552288A79C40C9CD77B826621D071DC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/banxi1988\/BXViewPager.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BEFFFE706DBA2F8FC3CEA9635D80C6C1CD3F9815"
+    }
+  ]
+}

@@ -8,48 +8,90 @@
 
 import UIKit
 import BXViewPager
+import BXForm
+import BXModel
 
 class DemoListTableViewController: UITableViewController {
-    @IBOutlet weak var simpleDemo: UITableViewCell!
-    @IBOutlet weak var simpleTabLayout: UITableViewCell!
-  @IBOutlet weak var tabVCCell: UITableViewCell!
-   
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)!
+  var simplePageCell: UITableViewCell = {
+    let cell = StaticTableViewCell(style: .Default, reuseIdentifier: nil)
+    cell.textLabel?.text = "简单的 Tab 样式加 ViewPager 滑动"
+    cell.accessoryType = .DisclosureIndicator
+    return cell
+  }()
+  
+  var withBadgeCell: UITableViewCell = {
+    let cell = StaticTableViewCell(style: .Default, reuseIdentifier: nil)
+    cell.textLabel?.text = "带 Badge 的 Tab"
+    cell.accessoryType = .DisclosureIndicator
+    return cell
+  }()
+  
+  var simpleTabCell: UITableViewCell = {
+    let cell = StaticTableViewCell(style: .Default, reuseIdentifier: nil)
+    cell.textLabel?.text = "Tab 风格 Content 不能滑动"
+    cell.accessoryType = .DisclosureIndicator
+    return cell
+  }()
+ 
+  var allCells:[UITableViewCell]{
+   return [simplePageCell,withBadgeCell,simpleTabCell]
+  }
+ 
+  let adapter = StaticTableViewAdapter()
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    adapter.appendContentsOf(allCells)
+    tableView.dataSource = adapter
+    tableView.rowHeight = 44
+    tableView.tableFooterView = UIView()
+  }
+  
+  func didTapCell(cell:UITableViewCell){
         switch cell{
-        case simpleDemo:
+        case simplePageCell:
             showSimpleDemo()
-            break
-        case tabVCCell:
+        case withBadgeCell:
+          showWithBadgeDemo()
+        case simpleTabCell:
           showSimpleTabVC()
         default:
             break
         }
-    }
+  }
+  
+
+
+  func createTitleVCS(count:Int=5) -> [UIViewController]{
+    return (1...count).map{ ShowTitleViewController(title: "TAB \($0)") }
+  }
+  
     
   func showSimpleTabVC(){
-    var vcs = [UIViewController]()
-    for index in 1...5 {
-      let vc = ShowTitleViewController(title: "Tab \(index)")
-      vcs.append(vc)
-    }
     let viewPagerVC = BXTabViewController()
-    viewPagerVC.setViewControllers(vcs, animated: true)
+    viewPagerVC.setViewControllers(createTitleVCS(), animated: true)
     showViewController(viewPagerVC, sender: self)
   }
   
-    func showSimpleDemo(){
-        var vcs = [UIViewController]()
-        for index in 1...5 {
-           let vc = ShowTitleViewController(title: "Tab \(index)")
-            vcs.append(vc)
-        }
-        let viewPagerVC = BXViewPagerViewController()
-      viewPagerVC.setViewControllers(vcs, animated: true)
-        showViewController(viewPagerVC, sender: self)
-        
-    }
+  func showSimpleDemo(){
+    let viewPagerVC = BXViewPagerViewController()
+    viewPagerVC.setViewControllers(createTitleVCS(), animated: true)
+      showViewController(viewPagerVC, sender: self)
+  }
+  
+  func showWithBadgeDemo(){
+    let viewPagerVC = BXViewPagerViewController()
+    let vcs = createTitleVCS()
+    viewPagerVC.setViewControllers(vcs, animated: true)
+    let tabs = vcs.map{ BXTab(text: $0.title) }
+    tabs[2].badgeValue = "63"
+    viewPagerVC.updateTabs(tabs)
+    showViewController(viewPagerVC, sender: self)
+  }
+  
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let cell = tableView.cellForRowAtIndexPath(indexPath)!
+    self.didTapCell(cell)
+  }
 }
 
 class ShowTitleViewController: UIViewController{

@@ -38,9 +38,8 @@ public class BXTabLayoutViewController:UIViewController{
   }
   
   
-  internal lazy var tabLayout : BXTabLayout = {
+  public lazy private(set) var tabLayout : BXTabLayout = {
     let tabLayout = BXTabLayout()
-
     tabLayout.backgroundColor = UIColor.whiteColor()
     return tabLayout
   }()
@@ -50,9 +49,20 @@ public class BXTabLayoutViewController:UIViewController{
   
   public var didSelectedTab: ( (BXTab) -> Void )?
   
+  public var showIndicator:Bool{
+    get{
+      return tabLayout.showIndicator
+    }set{
+      tabLayout.showIndicator = newValue
+    }
+  }
+  
 
   
   func updateTabs(){
+    if useCustomTabs{
+      return
+    }
     var tabs:[BXTab] = []
     for (index,vc) in self.viewControllers.enumerate() {
       let tab = BXTab(text: vc.title)
@@ -60,6 +70,12 @@ public class BXTabLayoutViewController:UIViewController{
       tabs.append(tab)
     }
     tabLayout.updateTabs(tabs)
+  }
+ 
+  private var useCustomTabs = false
+  public func updateTabs(tabs:[BXTab]){
+    useCustomTabs = true
+   tabLayout.updateTabs(tabs)
   }
   
   

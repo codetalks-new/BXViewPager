@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5BCE8FAD7A1830DED2476511'
+               BlueprintIdentifier = 'AF21B7DCAC6DF8921CD2FF45'
                BlueprintName = 'BXViewPager'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'BXViewPager.framework'>

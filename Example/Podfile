@@ -6,10 +6,5 @@ target 'BXViewPager_Example', :exclusive => true do
   pod "BXViewPager", :path => "../"
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
   pod 'PinAutoLayout'
-end
-
-target 'BXViewPager_Tests', :exclusive => true do
-  pod "BXViewPager", :path => "../"
-
-  
+  pod 'BXForm', :path => '../../BXForm'
 end

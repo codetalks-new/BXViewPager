@@ -6,6 +6,38 @@
 //  Copyright © 2015年 CocoaPods. All rights reserved.
 //
 
+
+//
+//  OvalLabel.swift
+//  Pods
+//
+//  Created by Haizhen Lee on 15/12/29.
+//
+//
+
+import UIKit
+
+public class OvalLabel:UILabel{
+  public var horizontalPadding:CGFloat = 4
+  public lazy var maskLayer : CAShapeLayer = { [unowned self] in
+    let maskLayer = CAShapeLayer()
+    maskLayer.frame = self.frame
+    self.layer.mask = maskLayer
+    return maskLayer
+    }()
+  
+  public override func layoutSubviews() {
+    super.layoutSubviews()
+    maskLayer.frame = bounds
+    maskLayer.path = UIBezierPath(ovalInRect:bounds).CGPath
+  }
+  
+  public override func intrinsicContentSize() -> CGSize {
+    let size = super.intrinsicContentSize()
+    return CGSize(width: size.width + horizontalPadding, height: size.height + horizontalPadding)
+  }
+}
+
 import UIKit
 
 // Build for target uimodel
@@ -17,6 +49,7 @@ import UIKit
 
 public class BXTabView : BXTabViewCell{
   let titleLabel = UILabel(frame:CGRectZero)
+  let badgeLabel = OvalLabel(frame:CGRectZero)
 
   
   private var _normalTitleColor:UIColor?
@@ -50,6 +83,12 @@ public class BXTabView : BXTabViewCell{
   
   public override func bind(item:BXTab){
     titleLabel.text  = item.text
+    if let badgeValue = item.badgeValue{
+      badgeLabel.text = badgeValue
+      badgeLabel.hidden = false
+    }else{
+      badgeLabel.hidden = true
+    }
   }
   
   override public func awakeFromNib() {
@@ -58,10 +97,10 @@ public class BXTabView : BXTabViewCell{
   }
   
   var allOutlets :[UIView]{
-    return [titleLabel]
+    return [titleLabel,badgeLabel]
   }
   var allUILabelOutlets :[UILabel]{
-    return [titleLabel]
+    return [titleLabel,badgeLabel]
   }
 
   public  required init?(coder aDecoder: NSCoder) {
@@ -81,14 +120,21 @@ public class BXTabView : BXTabViewCell{
   func installConstaints(){
     titleLabel.pinCenterX()
     titleLabel.pinBottom(10)
+    
+    badgeLabel.pinAboveSibling(titleLabel, margin: -7)
+    badgeLabel.pinLeadingToSibling(titleLabel, margin: -7)
+    badgeLabel.pinHeight(17)
+    badgeLabel.pinWidthGreaterThanOrEqual(17)
   }
   
   func setupAttrs(){
-//    backgroundColor = UIColor.whiteColor()
     titleLabel.textColor = UIColor.darkTextColor()
     titleLabel.font = UIFont.systemFontOfSize(13)
     titleLabel.textAlignment = .Center
-//    titleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+    badgeLabel.font = UIFont.systemFontOfSize(10)
+    badgeLabel.textColor = UIColor.whiteColor()
+    badgeLabel.backgroundColor = UIColor(red: 1.0, green: 0.231372, blue: 0.1881, alpha: 1.0)
+    badgeLabel.textAlignment = .Center
 
   }
   
