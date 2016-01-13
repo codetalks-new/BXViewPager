@@ -26,7 +26,7 @@ Support Fixed or Scrollable TabLayout,Support Tab Cell with Badge Value
   s.license          = 'MIT'
   s.author           = { "banxi1988" => "banxi1988@gmail.com" }
   s.source           = { :git => "https://github.com/banxi1988/BXViewPager.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/banxi1988'
+  #s.social_media_url = 'https://twitter.com/banxi1988'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
