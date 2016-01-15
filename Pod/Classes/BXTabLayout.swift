@@ -219,16 +219,31 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
   }
   
   func onSelectedTabChanged(){
+    updateIndicatorView()
+  }
+  
+  func updateIndicatorView(){
     if let indexPath = collectionView.indexPathsForSelectedItems()?.first{
-      if let cell = collectionView.cellForItemAtIndexPath(indexPath){
-        let cellCenter = cell.center
+      let count = collectionView.numberOfItemsInSection(indexPath.section)
+      let bounds = self.bounds
+      let itemAvgWidth = bounds.width / CGFloat(count)
+      let centerX = itemAvgWidth * CGFloat(indexPath.item) + itemAvgWidth * 0.5
         UIView.animateWithDuration(0.3){
-            self.indicatorView.center.x = cellCenter.x
+          self.indicatorView.center.x = centerX
         }
-        
-      }
-    
     }
+  }
+  
+  public override func layoutSubviews() {
+    super.layoutSubviews()
+    updateItemSize()
+    updateIndicatorView()
+    NSLog("\(__FUNCTION__)")
+  }
+  
+  public override func didMoveToWindow() {
+    super.didMoveToWindow()
+    NSLog("\(__FUNCTION__)")
   }
   
   

@@ -27,7 +27,7 @@ public class BXTabLayoutViewController:UIViewController{
   public private(set) var viewControllers: [UIViewController] = []{
     didSet{
       updateTabs()
-      if isViewLoaded(){
+      if isViewLoaded() && self.view.window != nil{
         setupInitialViewController()
       }
     }
@@ -76,7 +76,17 @@ public class BXTabLayoutViewController:UIViewController{
     useCustomTabs = true
    tabLayout.updateTabs(tabs)
   }
+ 
   
+  public var tabLayoutHeight:CGFloat{
+    get{
+      return tabLayoutHeightContraint?.constant ?? TabLayoutDefaultOptions.defaultHeight
+    }set{
+      tabLayoutHeightContraint?.constant = newValue
+    }
+  }
+  
+  private var tabLayoutHeightContraint:NSLayoutConstraint?
   
   public override func loadView() {
     super.loadView()
@@ -87,7 +97,7 @@ public class BXTabLayoutViewController:UIViewController{
     tabLayout.translatesAutoresizingMaskIntoConstraints = false
     pinTopLayoutGuide(tabLayout)
     tabLayout.pinHorizontal(0)
-    tabLayout.pinHeight(TabConstants.defaultHeight)
+    tabLayoutHeightContraint = tabLayout.pinHeight(TabLayoutDefaultOptions.defaultHeight)
     
     
     self.view.addSubview(containerView)
@@ -128,7 +138,6 @@ public class BXTabLayoutViewController:UIViewController{
       return
     }
     hasSelectAny = true
-    recalculateItemSize()
     tabLayout.selectTabAtIndex(0)
     showPageAtIndex(0)
   }
@@ -138,11 +147,12 @@ public class BXTabLayoutViewController:UIViewController{
   
   public override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    recalculateItemSize()
+    NSLog("\(__FUNCTION__)")
   }
   
   public override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
+    NSLog("\(__FUNCTION__)")
     if viewControllers.count > 0 {
       setupInitialViewController()
     }

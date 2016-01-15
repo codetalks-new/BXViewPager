@@ -10,9 +10,12 @@ import UIKit
 import PinAutoLayout
 
 struct TabConstants{
-  static let defaultHeight : CGFloat = 44
   static let minInteritemSpacing : CGFloat = 8
   static let minItemWidth: CGFloat = 64
+}
+
+public struct TabLayoutDefaultOptions{
+  public static var defaultHeight : CGFloat = 44
 }
 
 

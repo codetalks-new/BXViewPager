@@ -119,7 +119,7 @@ public class BXTabView : BXTabViewCell{
   
   func installConstaints(){
     titleLabel.pinCenterX()
-    titleLabel.pinBottom(10)
+    titleLabel.pinCenterY()
     
     badgeLabel.pinAboveSibling(titleLabel, margin: -7)
     badgeLabel.pinLeadingToSibling(titleLabel, margin: -7)
