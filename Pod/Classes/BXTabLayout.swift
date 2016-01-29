@@ -206,12 +206,26 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
     self.tabs.removeAll()
     self.tabs.appendContentsOf(tabs)
     reloadData()
+    if tabs.count > 0 {
+      if let indexPaths = collectionView.indexPathsForSelectedItems() where indexPaths.isEmpty{
+        collectionView.selectItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0), animated: true, scrollPosition: .CenteredHorizontally)
+      }
+    }
+  }
+ 
+  public func bx_delay(delay:NSTimeInterval,block:dispatch_block_t){
+    dispatch_after(
+      dispatch_time(DISPATCH_TIME_NOW,Int64(delay * Double(NSEC_PER_SEC)))
+      , dispatch_get_main_queue()
+      , block)
   }
   
   public func selectTabAtIndex(index:Int){
     let indexPath = NSIndexPath(forItem: index, inSection: 0)
     collectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: UICollectionViewScrollPosition.CenteredHorizontally)
-    onSelectedTabChanged()
+    bx_delay(0.3){
+      self.onSelectedTabChanged()
+    }
   }
   
   public func tabAtIndexPath(indexPath:NSIndexPath) -> BXTab{
@@ -223,14 +237,24 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
   }
   
   func updateIndicatorView(){
-    if let indexPath = collectionView.indexPathsForSelectedItems()?.first{
-      let count = collectionView.numberOfItemsInSection(indexPath.section)
-      let bounds = self.bounds
-      let itemAvgWidth = bounds.width / CGFloat(count)
-      let centerX = itemAvgWidth * CGFloat(indexPath.item) + itemAvgWidth * 0.5
-        UIView.animateWithDuration(0.3){
-          self.indicatorView.center.x = centerX
-        }
+    guard  let indexPath = collectionView.indexPathsForSelectedItems()?.first else{
+      return
+    }
+    
+    guard let attrs = flowLayout.layoutAttributesForItemAtIndexPath(indexPath) else{
+      return
+    }
+    
+    guard let cell = collectionView.cellForItemAtIndexPath(indexPath) else {
+      return
+    }
+    NSLog("Current Selected Item Attrs:\(attrs)")
+    
+    let originX = attrs.frame.minX - collectionView.bounds.origin.x
+    let centerX = originX + attrs.frame.width * 0.5
+    
+    UIView.animateWithDuration(0.3){
+      self.indicatorView.center.x = centerX
     }
   }
   

@@ -67,8 +67,16 @@ public class BXTabView : BXTabViewCell{
     get{
       return _selectedTitleColor
     }set{
-      NSLog("setSelectedTitleColor")
       _selectedTitleColor = newValue
+      updateTitleLabel()
+    }
+  }
+  
+  public dynamic var titleFont:UIFont{
+    get{
+      return titleLabel.font
+    }set{
+      titleLabel.font = newValue
       updateTitleLabel()
     }
   }
