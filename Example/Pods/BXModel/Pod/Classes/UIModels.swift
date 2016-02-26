@@ -14,14 +14,15 @@ public protocol BXBindable{
 }
 
 public protocol BXNibable{
-    typealias ItemType
+    typealias CustomViewClass
     static var hasNib:Bool{ get }
     static func nib() -> UINib
-    static func instantiate() -> ItemType
+    static func instantiate() -> CustomViewClass
 }
 
 
 extension UIView:BXNibable{
+  public typealias CustomViewClass = UIView
     public static var hasNib:Bool{
         let name = simpleClassName(self)
         let bundle = NSBundle(forClass: self)
@@ -33,8 +34,19 @@ extension UIView:BXNibable{
         let name = simpleClassName(self)
         return UINib(nibName: name, bundle: NSBundle(forClass: self))
     }
-    
-    public static func instantiate() -> UIView{
-        return nib().instantiateWithOwner(self, options: nil).first as! UIView
+  
+  
+    public static func instantiate() -> CustomViewClass{
+        return nib().instantiateWithOwner(self, options: nil).first as! CustomViewClass
     }
 }
+
+class MyCustomButton:UIButton{
+ internal typealias CustomViewClass = MyCustomButton
+  
+
+}
+
+let button = MyCustomButton.instantiate()
+
+

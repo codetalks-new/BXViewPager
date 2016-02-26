@@ -51,10 +51,14 @@ extension BXBasicItemTableViewCell:BXBindable{
 public class SimpleTableViewAdapter<T:BXBasicItemAware>:SimpleGenericTableViewAdapter<T,BXBasicItemTableViewCell>{
     public let cellStyle:UITableViewCellStyle
     public var cellAccessoryType:UITableViewCellAccessoryType = .None
-    public init(tableView: UITableView, items: [T] = [], cellStyle:UITableViewCellStyle = .Value2) {
+    public init(tableView: UITableView? = nil, items: [T] = [], cellStyle:UITableViewCellStyle = .Value2) {
         self.cellStyle = cellStyle
         super.init(tableView: tableView, items: items)
-        tableView.registerClass(cellClass, forCellReuseIdentifier: reuseIdentifier)
+    }
+  
+    public override func bindTo(tableView: UITableView) {
+      super.bindTo(tableView)
+      tableView.registerClass(cellClass, forCellReuseIdentifier: reuseIdentifier)
     }
     
     var cellClass:BXBasicItemTableViewCell.Type{

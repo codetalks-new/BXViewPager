@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-BXViewPager_Example/BXModel.framework"
   install_framework "Pods-BXViewPager_Example/BXViewPager.framework"
   install_framework "Pods-BXViewPager_Example/BXiOSUtils.framework"
+  install_framework "Pods-BXViewPager_Example/PinAuto.framework"
   install_framework "Pods-BXViewPager_Example/PinAutoLayout.framework"
   install_framework "Pods-BXViewPager_Example/SwiftyJSON.framework"
 fi
@@ -96,6 +97,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-BXViewPager_Example/BXModel.framework"
   install_framework "Pods-BXViewPager_Example/BXViewPager.framework"
   install_framework "Pods-BXViewPager_Example/BXiOSUtils.framework"
+  install_framework "Pods-BXViewPager_Example/PinAuto.framework"
   install_framework "Pods-BXViewPager_Example/PinAutoLayout.framework"
   install_framework "Pods-BXViewPager_Example/SwiftyJSON.framework"
 fi

@@ -315,3 +315,52 @@ extension NSDate: Comparable {
 public func <(lhs: NSDate, rhs: NSDate) -> Bool {
   return lhs.compare(rhs) == NSComparisonResult.OrderedAscending
 }
+
+
+
+extension NSDate{
+  public var bx_shortDateString:String{
+    return bx_dateTimeStringWithFormatStyle(.ShortStyle, timeStyle: .NoStyle)
+  }
+  
+  public var bx_longDateString:String{
+    return bx_dateTimeStringWithFormatStyle(.MediumStyle, timeStyle: .NoStyle)
+  }
+  
+  public var bx_shortTimeString:String{
+    return bx_dateTimeStringWithFormatStyle(.NoStyle, timeStyle: .ShortStyle)
+  }
+  
+  public var bx_dateTimeString:String{
+    return bx_dateTimeStringWithFormatStyle(.MediumStyle, timeStyle: .MediumStyle)
+  }
+  
+  public func bx_dateTimeStringWithFormatStyle(dateStyle:NSDateFormatterStyle,timeStyle:NSDateFormatterStyle) -> String{
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateStyle = dateStyle
+    dateFormatter.timeStyle = timeStyle
+    return dateFormatter.stringFromDate(self)
+  }
+  
+  public var bx_relativeDateTimeString:String{
+    let secondsToNow = abs(Int(timeIntervalSinceNow))
+    let now = NSDate()
+    let calendar = NSCalendar.currentCalendar()
+    switch secondsToNow{
+    case 0..<60: return "刚刚"
+    case 60..<300:
+      return "\(secondsToNow / 60)分钟前"
+    default:
+      if calendar.isDateInYesterday(self){
+        return "昨天 \(bx_shortTimeString)"
+      }else if calendar.isDateInToday(self){
+        return bx_shortTimeString
+      }else if now.year == year{
+        return bx_shortDateString
+      }else{
+        return self.bx_longDateString
+      }
+    }
+    
+  }
+}

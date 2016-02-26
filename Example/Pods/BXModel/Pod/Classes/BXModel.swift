@@ -14,7 +14,7 @@ public protocol BXModelAware{
     
 }
 
-public protocol BXModel:BXModelAware,BXJSONDeserializable{
+public protocol BXModel:BXModelAware,BXJSONDeserializable,BXJSONSerializable{
 }
 
 

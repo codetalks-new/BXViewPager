@@ -12,7 +12,7 @@ public class ComplexTableViewAdapter<T,V:StaticTableViewCell where V:BXBindable 
  
   var cells:[UITableViewCell] = []
   public init(
-    tableView:UITableView,items:[T] = [],
+    tableView:UITableView? = nil,items:[T] = [],
     cells:[UITableViewCell] = []){
       super.init(tableView: tableView, items: items)
     self.cells = cells
@@ -41,12 +41,12 @@ public class ComplexTableViewAdapter<T,V:StaticTableViewCell where V:BXBindable 
   
   public func append(cell:UITableViewCell){
     self.cells.append(cell)
-    tableView.reloadData()
+    tableView?.reloadData()
   }
   
   public func appendContentsOf(cells:[UITableViewCell]){
     self.cells.appendContentsOf(cells)
-    tableView.reloadData()
+    tableView?.reloadData()
   }
   
   public override func numberOfRows() -> Int {

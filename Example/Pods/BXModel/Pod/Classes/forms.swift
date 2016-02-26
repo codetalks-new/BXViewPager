@@ -15,6 +15,15 @@ public class BXField{
   public let valueType:String
   public var value:AnyObject?
   
+  // MARK: Validate
+  // Taken from
+  public var required:Bool = true
+  public var label:String?
+  public var label_suffix:String?
+  public var help_text:String?
+  
+  
+  
   public init(name:String,valueType:String){
     self.name = name
     self.valueType = valueType
@@ -31,6 +40,12 @@ public class BXField{
   }
 }
 
+public class BXCharField:BXField{
+  public var strip = true
+  public var max_length = Int.max
+  public var min_length = 0
+}
+
 public enum ValidateError:ErrorType{
   case TextIsBlank
   case UnsupportValueType
@@ -39,8 +54,8 @@ public enum ValidateError:ErrorType{
 }
 
 public struct InvalidFieldError:ErrorType{
-  let field:BXField
-  let error:ValidateError
+  public let field:BXField
+  public let error:ValidateError
   public init(field:BXField,error:ValidateError){
     self.field = field
     self.error = error
@@ -56,7 +71,16 @@ public struct Validators {
   
   public static func checkField(field:BXField) throws {
     do{
-      try checkText(field.value as! String)
+      switch field.valueType{
+        case "String":
+          if let value = field.value as? String{
+            try checkText(value)
+          }else{
+            throw ValidateError.WrongValueType
+          }
+      default:
+        throw ValidateError.UnsupportValueType
+      }
     }catch let error as ValidateError{
       throw InvalidFieldError(field: field, error: error)
     }

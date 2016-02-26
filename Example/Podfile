@@ -2,9 +2,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios , 8.1
 use_frameworks!
 
-target 'BXViewPager_Example', :exclusive => true do
+target 'BXViewPager_Example' do
   pod "BXViewPager", :path => "../"
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
   pod 'PinAutoLayout'
-  pod 'BXForm', :path => '../../BXForm'
+  pod 'BXForm'
 end

@@ -1,36 +1,39 @@
 PODS:
-  - BXForm (0.1.0):
+  - BXForm (0.1.4):
     - BXiOSUtils
     - BXModel
+    - PinAuto
     - PinAutoLayout
-  - BXiOSUtils (0.1.3)
-  - BXModel (0.1.0):
+  - BXiOSUtils (0.1.5)
+  - BXModel (0.2.1):
     - SwiftyJSON
-  - BXViewPager (0.1.1):
+  - BXViewPager (0.1.2):
     - PinAutoLayout
+  - PinAuto (1.2)
   - PinAutoLayout (1.1.0)
   - Reveal-iOS-SDK (1.6.1)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
-  - BXForm (from `../../BXForm`)
+  - BXForm
   - BXViewPager (from `../`)
   - PinAutoLayout
   - Reveal-iOS-SDK
 
 EXTERNAL SOURCES:
-  BXForm:
-    :path: ../../BXForm
   BXViewPager:
     :path: ../
 
 SPEC CHECKSUMS:
-  BXForm: 0b2b8fcfe4a7feb1ec22215d80c94255162adcaa
-  BXiOSUtils: d579fe8c3f310e513960e2a4457b121e50a3ee4a
-  BXModel: cafda844bd7cd91f11767a57df17eec502b4dfa9
-  BXViewPager: 976c66ebd1bc9c5c216f2aeb5bc195d85165b927
+  BXForm: 64e710685e34d4e26f39c6ef3cfe1bc597cbf89d
+  BXiOSUtils: 00299e153728076d5ffe5813dd855fc0c823ca52
+  BXModel: dd06e85b7ca3f5a7415f992023cdf984a292bd56
+  BXViewPager: 7769b1998feaf692e8adfc9c92fc1f704b9d6515
+  PinAuto: 0184951a80225a5aa1bec80aaa0f2e3102a1dda9
   PinAutoLayout: 9d0863eed45d1d6277aa663c8a32b77b03a16bf1
   Reveal-iOS-SDK: ceae964076cebe3efe63e5e9abe3152efce46aa8
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: cb3eaf3916e48330bf4ea6e70bb254486f47ada0
+
+COCOAPODS: 1.0.0.beta.3

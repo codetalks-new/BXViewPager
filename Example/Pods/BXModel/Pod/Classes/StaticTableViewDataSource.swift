@@ -9,8 +9,9 @@
 import Foundation
 
 public class StaticTableViewDataSource:NSObject,UITableViewDataSource,BXDataSourceContainer{
-  var cells:[UITableViewCell] = []
+  public private(set) var cells:[UITableViewCell] = []
   public typealias ItemType = UITableViewCell
+  public var section = 0
   public init(cells:[UITableViewCell] = []){
     self.cells = cells
   }
@@ -34,11 +35,15 @@ public class StaticTableViewDataSource:NSObject,UITableViewDataSource,BXDataSour
   }
   
   public func append(cell:UITableViewCell){
-    self.cells.append(cell)
+    if !cells.contains(cell){
+      self.cells.append(cell)
+    }
   }
   
   public func appendContentsOf(cells:[UITableViewCell]){
-    self.cells.appendContentsOf(cells)
+    for cell in cells{
+        append(cell)
+    }
   }
  
   
