@@ -138,6 +138,7 @@ public class BXTabLayoutViewController:UIViewController{
       return
     }
     hasSelectAny = true
+    
     tabLayout.selectTabAtIndex(0)
     showPageAtIndex(0)
   }
@@ -152,6 +153,10 @@ public class BXTabLayoutViewController:UIViewController{
   
   public override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
+  }
+  
+  public override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
     NSLog("\(__FUNCTION__)")
     if viewControllers.count > 0 {
       setupInitialViewController()

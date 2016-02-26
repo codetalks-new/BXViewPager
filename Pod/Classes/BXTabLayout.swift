@@ -6,6 +6,13 @@
 public enum BXTabLayoutMode{
   case Scrollable(visibleItems:CGFloat)
   case Fixed
+  
+  var isFixed:Bool{
+    switch self{
+    case .Fixed: return true
+    default: return false
+    }
+  }
 }
 
 
@@ -223,8 +230,13 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
   public func selectTabAtIndex(index:Int){
     let indexPath = NSIndexPath(forItem: index, inSection: 0)
     collectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: UICollectionViewScrollPosition.CenteredHorizontally)
-    bx_delay(0.3){
+    if mode.isFixed{
       self.onSelectedTabChanged()
+    }else{
+      flowLayout.invalidateLayout()
+      bx_delay(0.3){
+        self.onSelectedTabChanged()
+      }
     }
   }
   
@@ -245,9 +257,6 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
       return
     }
     
-    guard let cell = collectionView.cellForItemAtIndexPath(indexPath) else {
-      return
-    }
     NSLog("Current Selected Item Attrs:\(attrs)")
     
     let originX = attrs.frame.minX - collectionView.bounds.origin.x
