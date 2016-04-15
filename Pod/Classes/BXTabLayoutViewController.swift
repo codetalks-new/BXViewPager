@@ -95,16 +95,16 @@ public class BXTabLayoutViewController:UIViewController{
     //
     self.view.addSubview(tabLayout)
     tabLayout.translatesAutoresizingMaskIntoConstraints = false
-    pinTopLayoutGuide(tabLayout)
-    tabLayout.pinHorizontal(0)
-    tabLayoutHeightContraint = tabLayout.pinHeight(TabLayoutDefaultOptions.defaultHeight)
+    tabLayout.pa_below(topLayoutGuide).install()
+    tabLayout.pac_horizontal()
+    tabLayoutHeightContraint = tabLayout.pa_height.eq(TabLayoutDefaultOptions.defaultHeight).install()
     
     
     self.view.addSubview(containerView)
     containerView.translatesAutoresizingMaskIntoConstraints = false
-    containerView.pinHorizontal(0)
-    containerView.pinBelowSibling(tabLayout,margin:0)
-    pinBottomLayoutGuide(containerView)
+    containerView.pac_horizontal(0)
+    containerView.pa_below(tabLayout,offset:0).install()
+    containerView.pa_above(bottomLayoutGuide).install()
     
     
     containerView.backgroundColor = UIColor.whiteColor()
@@ -114,7 +114,7 @@ public class BXTabLayoutViewController:UIViewController{
     addChildViewController(controller)
     containerView.addSubview(controller.view)
     controller.view.translatesAutoresizingMaskIntoConstraints = false
-    controller.view.pinEdge(UIEdgeInsetsZero)
+    controller.view.pac_edge()
     controller.didMoveToParentViewController(self)
   }
 
@@ -148,7 +148,7 @@ public class BXTabLayoutViewController:UIViewController{
   
   public override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    NSLog("\(__FUNCTION__)")
+    NSLog("\(#function)")
   }
   
   public override func viewWillAppear(animated: Bool) {
@@ -157,7 +157,7 @@ public class BXTabLayoutViewController:UIViewController{
   
   public override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    NSLog("\(__FUNCTION__)")
+    NSLog("\(#function)")
     if viewControllers.count > 0 {
       setupInitialViewController()
     }

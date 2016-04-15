@@ -126,13 +126,12 @@ public class BXTabView : BXTabViewCell{
   }
   
   func installConstaints(){
-    titleLabel.pinCenterX()
-    titleLabel.pinCenterY()
+    titleLabel.pac_center()
     
-    badgeLabel.pinAboveSibling(titleLabel, margin: -7)
-    badgeLabel.pinLeadingToSibling(titleLabel, margin: -7)
-    badgeLabel.pinHeight(17)
-    badgeLabel.pinWidthGreaterThanOrEqual(17)
+    badgeLabel.pa_above(titleLabel, offset: -7).install()
+    badgeLabel.pa_after(titleLabel, offset: -7).install()
+    badgeLabel.pa_height.eq(17).install()
+    badgeLabel.pa_width.gte(17).install()
   }
   
   func setupAttrs(){

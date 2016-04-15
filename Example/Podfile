@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'BXViewPager_Example' do
   pod "BXViewPager", :path => "../"
-  pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+  #pod 'Reveal-iOS-SDK',  :configurations => ['Debug']
   pod 'PinAutoLayout'
   pod 'BXForm'
 end

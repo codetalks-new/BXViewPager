@@ -27,7 +27,7 @@ public let BX_TAB_REUSE_IDENTIFIER = "bx_tabCell"
 // Build for target uimodel
 //locale (None, None)
 import UIKit
-import PinAutoLayout
+import PinAuto
 
 // -BXTabLayout:v
 // _[hor0,t0,b0]:c
@@ -106,17 +106,16 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
   }
   
   func installConstaints(){
-    collectionView.pinBottom(0)
-    collectionView.pinHorizontal(0)
-    collectionView.pinTop(0)
+    collectionView.pac_vertical(0)
+    collectionView.pac_horizontal(0)
     
-    shadowView.pinHeight(1)
-    shadowView.pinBottom(0)
-    shadowView.pinHorizontal(0)
+    shadowView.pa_height.eq(1).install()
+    shadowView.pa_bottom.eq(0).install()
+    shadowView.pac_horizontal(0)
     
-    indicatorView.pinHeight(2)
-    indicatorView.pinBottom(0)
-    indicatorView.pinWidth(60)
+    indicatorView.pa_height.eq(2).install()
+    indicatorView.pa_bottom.eq(0).install()
+    indicatorView.pa_width.eq(60).install()
     
   }
   
@@ -271,12 +270,12 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
     super.layoutSubviews()
     updateItemSize()
     updateIndicatorView()
-    NSLog("\(__FUNCTION__)")
+    NSLog("\(#function)")
   }
   
   public override func didMoveToWindow() {
     super.didMoveToWindow()
-    NSLog("\(__FUNCTION__)")
+    NSLog("\(#function)")
   }
   
   

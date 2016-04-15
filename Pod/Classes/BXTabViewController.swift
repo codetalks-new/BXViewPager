@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PinAutoLayout
+import PinAuto
 
 
 

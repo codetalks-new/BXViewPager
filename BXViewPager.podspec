@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "BXViewPager"
-  s.version          = "0.1.4"
+  s.version          = "0.1.5"
   s.summary          = "BXViewPager is a Lib inspired by Android ViewPager,and offers more customize options"
 
 # This description is used to generate tags and improve search results.
@@ -32,12 +32,8 @@ Support Fixed or Scrollable TabLayout,Support Tab Cell with Badge Value
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'BXViewPager' => ['Pod/Assets/*.png']
-  }
-
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-    s.dependency 'PinAutoLayout'
+    s.dependency 'PinAuto'
 end

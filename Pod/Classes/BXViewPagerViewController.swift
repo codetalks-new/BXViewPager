@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PinAutoLayout
+import PinAuto
 
 struct TabConstants{
   static let minInteritemSpacing : CGFloat = 8
