@@ -86,7 +86,9 @@ public class BXTabLayoutViewController:UIViewController{
     }
   }
   
-  private var tabLayoutHeightContraint:NSLayoutConstraint?
+  public private(set) var tabLayoutHeightContraint:NSLayoutConstraint?
+  public private(set) var tabLayoutLeadingConstraint:NSLayoutConstraint?
+  public private(set) var tabLayoutTrailingConstraint:NSLayoutConstraint?
   
   public override func loadView() {
     super.loadView()
@@ -96,7 +98,8 @@ public class BXTabLayoutViewController:UIViewController{
     self.view.addSubview(tabLayout)
     tabLayout.translatesAutoresizingMaskIntoConstraints = false
     tabLayout.pa_below(topLayoutGuide).install()
-    tabLayout.pac_horizontal()
+    tabLayoutLeadingConstraint =  tabLayout.pa_leading.eq(0).install()
+    tabLayoutTrailingConstraint =  tabLayout.pa_trailing.eq(0).install()
     tabLayoutHeightContraint = tabLayout.pa_height.eq(TabLayoutDefaultOptions.defaultHeight).install()
     
     
