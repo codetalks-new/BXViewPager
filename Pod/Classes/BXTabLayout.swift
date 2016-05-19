@@ -252,18 +252,27 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
       return
     }
     
-    guard let attrs = flowLayout.layoutAttributesForItemAtIndexPath(indexPath) else{
-      return
+   
+    if mode.isFixed{
+      let itemSize = flowLayout.itemSize
+      let originX =  collectionView.bounds.origin.x + (itemSize.width * CGFloat(indexPath.item))
+      let centerX = originX + itemSize.width * 0.5
+      UIView.animateWithDuration(0.3){
+        self.indicatorView.center.x = centerX
+      }
+    }else{
+      guard let attrs = flowLayout.layoutAttributesForItemAtIndexPath(indexPath) else{
+        return
+      }
+      NSLog("Current Selected Item Attrs:\(attrs)")
+      let originX = attrs.frame.minX - collectionView.bounds.origin.x
+      let centerX = originX + attrs.frame.width * 0.5
+      
+      UIView.animateWithDuration(0.3){
+        self.indicatorView.center.x = centerX
+      }
     }
-    
-    NSLog("Current Selected Item Attrs:\(attrs)")
-    
-    let originX = attrs.frame.minX - collectionView.bounds.origin.x
-    let centerX = originX + attrs.frame.width * 0.5
-    
-    UIView.animateWithDuration(0.3){
-      self.indicatorView.center.x = centerX
-    }
+
   }
   
   public override func layoutSubviews() {
