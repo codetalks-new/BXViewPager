@@ -255,7 +255,8 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
    
     if mode.isFixed{
       let itemSize = flowLayout.itemSize
-      let originX =  collectionView.bounds.origin.x + (itemSize.width * CGFloat(indexPath.item))
+      let item = CGFloat(indexPath.item)
+      let originX =  collectionView.bounds.origin.x + (itemSize.width * item) + (flowLayout.minimumLineSpacing * item)
       let centerX = originX + itemSize.width * 0.5
       UIView.animateWithDuration(0.3){
         self.indicatorView.center.x = centerX
