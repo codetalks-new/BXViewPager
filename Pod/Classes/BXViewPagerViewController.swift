@@ -22,30 +22,30 @@ public struct TabLayoutDefaultOptions{
 // MARK: UIPageViewControllerDataSource
 extension BXViewPagerViewController:UIPageViewControllerDataSource{
   // MARK: UIPageViewController DataSource
-  public func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?{
-    if let index =  viewControllers.indexOf(viewController) where index > 0{
-      let prevIndex = index.predecessor()
+  public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?{
+    if let index =  viewControllers.index(of: viewController) , index > 0{
+      let prevIndex = (index - 1)
       return viewControllers[prevIndex]
     }
     return nil
     
   }
   
-  public func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?{
-    if let index = viewControllers.indexOf(viewController) where index < viewControllers.endIndex.predecessor(){
-      return viewControllers[index.successor()]
+  public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?{
+    if let index = viewControllers.index(of: viewController) , index < (viewControllers.endIndex - 1){
+      return viewControllers[(index + 1)]
     }
     return nil
   }
   
 }
 
-public class BXViewPagerViewController: BXTabLayoutViewController{
+open class BXViewPagerViewController: BXTabLayoutViewController{
   
   
-  public let pageController =  UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+  open let pageController =  UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
   
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         pageController.dataSource = self
         pageController.delegate = self
@@ -57,16 +57,16 @@ public class BXViewPagerViewController: BXTabLayoutViewController{
 
 // MARK: PageController Helper
   
-    public override var currentPageViewController:UIViewController?{
+    open override var currentPageViewController:UIViewController?{
       return pageController.viewControllers?.first
     }
   
-    public override func showPageAtIndex(index:Int){
+    open override func showPageAtIndex(_ index:Int){
       if viewControllers.isEmpty{
         return
       }
         let currentIndex = currentPageIndex() ?? -1
-        let direction:UIPageViewControllerNavigationDirection = index > currentIndex ? .Forward:.Reverse
+        let direction:UIPageViewControllerNavigationDirection = index > currentIndex ? .forward:.reverse
         let initControllers = [ viewControllers[index] ]
         pageController.setViewControllers(initControllers, direction: direction, animated: true){
             finished in
@@ -77,7 +77,7 @@ public class BXViewPagerViewController: BXTabLayoutViewController{
 
 // MARK: UIPageViewControllerDelegate
 extension BXViewPagerViewController: UIPageViewControllerDelegate{
-  public func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+  public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
     if completed{
       if let index = currentPageIndex(){
         tabLayout.selectTabAtIndex(index)
@@ -86,7 +86,7 @@ extension BXViewPagerViewController: UIPageViewControllerDelegate{
   }
   
   
-  public func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+  public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
     
   }
 }

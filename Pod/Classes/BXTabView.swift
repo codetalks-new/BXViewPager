@@ -17,23 +17,23 @@
 
 import UIKit
 
-public class OvalLabel:UILabel{
-  public var horizontalPadding:CGFloat = 4
-  public lazy var maskLayer : CAShapeLayer = { [unowned self] in
+open class OvalLabel:UILabel{
+  open var horizontalPadding:CGFloat = 4
+  open lazy var maskLayer : CAShapeLayer = { [unowned self] in
     let maskLayer = CAShapeLayer()
     maskLayer.frame = self.frame
     self.layer.mask = maskLayer
     return maskLayer
     }()
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
     maskLayer.frame = bounds
-    maskLayer.path = UIBezierPath(ovalInRect:bounds).CGPath
+    maskLayer.path = UIBezierPath(ovalIn:bounds).cgPath
   }
   
-  public override func intrinsicContentSize() -> CGSize {
-    let size = super.intrinsicContentSize()
+  open override var intrinsicContentSize : CGSize {
+    let size = super.intrinsicContentSize
     return CGSize(width: size.width + horizontalPadding, height: size.height + horizontalPadding)
   }
 }
@@ -47,14 +47,14 @@ import UIKit
 // -BXTabView(m=BXTab):cc
 // title[x,b12](f16,cdt);indicator[b0,x,h2]:v
 
-public class BXTabView : BXTabViewCell{
-  let titleLabel = UILabel(frame:CGRectZero)
-  let badgeLabel = OvalLabel(frame:CGRectZero)
+open class BXTabView : BXTabViewCell{
+  let titleLabel = UILabel(frame:CGRect.zero)
+  let badgeLabel = OvalLabel(frame:CGRect.zero)
 
   
-  private var _normalTitleColor:UIColor?
-  private  var _selectedTitleColor:UIColor?
-  public dynamic var normalTitleColor:UIColor?{
+  fileprivate var _normalTitleColor:UIColor?
+  fileprivate  var _selectedTitleColor:UIColor?
+  open dynamic var normalTitleColor:UIColor?{
     get{
       return _normalTitleColor
     }set{
@@ -63,7 +63,7 @@ public class BXTabView : BXTabViewCell{
     }
   }
   
-  public dynamic var selectedTitleColor:UIColor?{
+  open dynamic var selectedTitleColor:UIColor?{
     get{
       return _selectedTitleColor
     }set{
@@ -72,7 +72,7 @@ public class BXTabView : BXTabViewCell{
     }
   }
   
-  public dynamic var titleFont:UIFont{
+  open dynamic var titleFont:UIFont{
     get{
       return titleLabel.font
     }set{
@@ -89,17 +89,17 @@ public class BXTabView : BXTabViewCell{
   
   
   
-  public override func bind(item:BXTab){
+  open override func bind(_ item:BXTab){
     titleLabel.text  = item.text
     if let badgeValue = item.badgeValue{
       badgeLabel.text = badgeValue
-      badgeLabel.hidden = false
+      badgeLabel.isHidden = false
     }else{
-      badgeLabel.hidden = true
+      badgeLabel.isHidden = true
     }
   }
   
-  override public func awakeFromNib() {
+  override open func awakeFromNib() {
     super.awakeFromNib()
     commonInit()
   }
@@ -135,18 +135,18 @@ public class BXTabView : BXTabViewCell{
   }
   
   func setupAttrs(){
-    titleLabel.textColor = UIColor.darkTextColor()
-    titleLabel.font = UIFont.systemFontOfSize(13)
-    titleLabel.textAlignment = .Center
-    badgeLabel.font = UIFont.systemFontOfSize(10)
-    badgeLabel.textColor = UIColor.whiteColor()
+    titleLabel.textColor = UIColor.darkText
+    titleLabel.font = UIFont.systemFont(ofSize: 13)
+    titleLabel.textAlignment = .center
+    badgeLabel.font = UIFont.systemFont(ofSize: 10)
+    badgeLabel.textColor = UIColor.white
     badgeLabel.backgroundColor = UIColor(red: 1.0, green: 0.231372, blue: 0.1881, alpha: 1.0)
-    badgeLabel.textAlignment = .Center
+    badgeLabel.textAlignment = .center
 
   }
   
 
-  override public var selected:Bool{
+  override open var isSelected:Bool{
     didSet{
       updateTitleLabel()
     }
@@ -154,13 +154,13 @@ public class BXTabView : BXTabViewCell{
   
   func updateTitleLabel(){
       let textColor:UIColor
-      if selected{
+      if isSelected{
         textColor = selectedTitleColor ?? self.tintColor
       }else{
-        textColor = normalTitleColor ?? UIColor.darkTextColor()
+        textColor = normalTitleColor ?? UIColor.darkText
       }
-      UIView.transitionWithView(titleLabel, duration: 0.3,
-        options: UIViewAnimationOptions.TransitionCrossDissolve,
+      UIView.transition(with: titleLabel, duration: 0.3,
+        options: UIViewAnimationOptions.transitionCrossDissolve,
         animations: { () -> Void in
           self.titleLabel.textColor = textColor
         }) { (finished) -> Void in

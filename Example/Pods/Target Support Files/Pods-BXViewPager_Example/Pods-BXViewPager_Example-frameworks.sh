@@ -88,8 +88,9 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/BXModel/BXModel.framework"
   install_framework "$BUILT_PRODUCTS_DIR/BXViewPager/BXViewPager.framework"
   install_framework "$BUILT_PRODUCTS_DIR/BXiOSUtils/BXiOSUtils.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Cent/Cent.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Dollar/Dollar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PinAuto/PinAuto.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/PinAutoLayout/PinAutoLayout.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -97,7 +98,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/BXModel/BXModel.framework"
   install_framework "$BUILT_PRODUCTS_DIR/BXViewPager/BXViewPager.framework"
   install_framework "$BUILT_PRODUCTS_DIR/BXiOSUtils/BXiOSUtils.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Cent/Cent.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Dollar/Dollar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PinAuto/PinAuto.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/PinAutoLayout/PinAutoLayout.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
 fi

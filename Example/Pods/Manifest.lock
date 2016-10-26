@@ -1,35 +1,38 @@
 PODS:
-  - BXForm (0.2.7):
-    - BXiOSUtils
-    - BXModel
-    - PinAuto
-  - BXiOSUtils (0.1.8)
-  - BXModel (0.2.3):
-    - SwiftyJSON
-  - BXViewPager (0.1.4):
-    - PinAuto
-  - PinAuto (1.6)
-  - PinAutoLayout (1.2.0)
-  - SwiftyJSON (2.3.2)
+  - BXForm (1.0.0):
+    - BXiOSUtils (~> 1.0)
+    - BXModel (~> 1.0)
+    - Cent (~> 6.0)
+    - PinAuto (~> 2.0)
+  - BXiOSUtils (1.0.0)
+  - BXModel (1.0.1):
+    - SwiftyJSON (~> 3.1.1)
+  - BXViewPager (0.1.7):
+    - PinAuto (~> 2.0)
+  - Cent (6.0.2):
+    - Dollar (~> 6.0.0)
+  - Dollar (6.0.0)
+  - PinAuto (2.0)
+  - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - BXForm
   - BXViewPager (from `../`)
-  - PinAutoLayout
 
 EXTERNAL SOURCES:
   BXViewPager:
     :path: ../
 
 SPEC CHECKSUMS:
-  BXForm: 280722f03fc76c1f4c692bbadd928846360ea57b
-  BXiOSUtils: c1355f78727837fd9d1d4c6cf1f6ccfca54fe7f7
-  BXModel: 7b107003f758feea4f5634b89869f085e6a015cc
-  BXViewPager: 8cd017fcb0f593448c5444bfb1f54dab76b5d6a0
-  PinAuto: 3fea106a06036fedf49928e65a1bced151c02f8a
-  PinAutoLayout: 5a6ecee564c659211993e623953dfe13592d75e6
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  BXForm: 19fbe8429769a9e4924963cbd33ea32980e0012e
+  BXiOSUtils: 7218b6016948a53abe4efe05b845ea94c4da566e
+  BXModel: 3e62bb93e8813bdc614413ec8c5b612971181494
+  BXViewPager: c095011b75562542af9a237fdac81e64ee3a463c
+  Cent: 99ff2a9be924f6244d836cd16bc3168105128563
+  Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
+  PinAuto: c17b09abc2710d60f523f397890bca0572d489e3
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 0ae8779a963774a576683f923a1f193ec757b4e0
+PODFILE CHECKSUM: ae54ca089ee7b8772125da49471c0de35bc3be82
 
-COCOAPODS: 1.0.0.beta.7
+COCOAPODS: 1.1.0.rc.2

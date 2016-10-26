@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BXTabLayoutViewController:UIViewController{
+open class BXTabLayoutViewController:UIViewController{
   
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -20,36 +20,36 @@ public class BXTabLayoutViewController:UIViewController{
   }
   
 
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
   
-  public private(set) var viewControllers: [UIViewController] = []{
+  open fileprivate(set) var viewControllers: [UIViewController] = []{
     didSet{
       updateTabs()
-      if isViewLoaded() && self.view.window != nil{
+      if isViewLoaded && self.view.window != nil{
         setupInitialViewController()
       }
     }
   }
   
-  public func setViewControllers(viewControllers: [UIViewController], animated: Bool){
+  open func setViewControllers(_ viewControllers: [UIViewController], animated: Bool){
     self.viewControllers = viewControllers
   }
   
   
-  public lazy private(set) var tabLayout : BXTabLayout = {
+  open lazy fileprivate(set) var tabLayout : BXTabLayout = {
     let tabLayout = BXTabLayout()
-    tabLayout.backgroundColor = UIColor.whiteColor()
+    tabLayout.backgroundColor = UIColor.white
     return tabLayout
   }()
   
   internal let containerView:UIView = UIView()
   
   
-  public var didSelectedTab: ( (BXTab) -> Void )?
+  open var didSelectedTab: ( (BXTab) -> Void )?
   
-  public var showIndicator:Bool{
+  open var showIndicator:Bool{
     get{
       return tabLayout.showIndicator
     }set{
@@ -63,7 +63,7 @@ public class BXTabLayoutViewController:UIViewController{
       return
     }
     var tabs:[BXTab] = []
-    for (index,vc) in self.viewControllers.enumerate() {
+    for (index,vc) in self.viewControllers.enumerated() {
       let tab = BXTab(text: vc.title)
       tab.position = index
       tabs.append(tab)
@@ -71,14 +71,14 @@ public class BXTabLayoutViewController:UIViewController{
     tabLayout.updateTabs(tabs)
   }
  
-  private var useCustomTabs = false
-  public func updateTabs(tabs:[BXTab]){
+  fileprivate var useCustomTabs = false
+  open func updateTabs(_ tabs:[BXTab]){
     useCustomTabs = true
    tabLayout.updateTabs(tabs)
   }
  
   
-  public var tabLayoutHeight:CGFloat{
+  open var tabLayoutHeight:CGFloat{
     get{
       return tabLayoutHeightContraint?.constant ?? TabLayoutDefaultOptions.defaultHeight
     }set{
@@ -86,11 +86,11 @@ public class BXTabLayoutViewController:UIViewController{
     }
   }
   
-  public private(set) var tabLayoutHeightContraint:NSLayoutConstraint?
-  public private(set) var tabLayoutLeadingConstraint:NSLayoutConstraint?
-  public private(set) var tabLayoutTrailingConstraint:NSLayoutConstraint?
+  open fileprivate(set) var tabLayoutHeightContraint:NSLayoutConstraint?
+  open fileprivate(set) var tabLayoutLeadingConstraint:NSLayoutConstraint?
+  open fileprivate(set) var tabLayoutTrailingConstraint:NSLayoutConstraint?
   
-  public override func loadView() {
+  open override func loadView() {
     super.loadView()
      self.automaticallyAdjustsScrollViewInsets = false
     tabLayout.registerClass(BXTabView.self)
@@ -110,18 +110,18 @@ public class BXTabLayoutViewController:UIViewController{
     containerView.pa_above(bottomLayoutGuide).install()
     
     
-    containerView.backgroundColor = UIColor.whiteColor()
+    containerView.backgroundColor = UIColor.white
   }
   
-  func addChildControllerToContainer(controller:UIViewController){
+  func addChildControllerToContainer(_ controller:UIViewController){
     addChildViewController(controller)
     containerView.addSubview(controller.view)
     controller.view.translatesAutoresizingMaskIntoConstraints = false
     controller.view.pac_edge()
-    controller.didMoveToParentViewController(self)
+    controller.didMove(toParentViewController: self)
   }
 
-  override public func viewDidLoad(){
+  override open func viewDidLoad(){
     super.viewDidLoad()
     tabLayout.didSelectedTab = {
       tab in
@@ -134,7 +134,7 @@ public class BXTabLayoutViewController:UIViewController{
     tabLayout.updateItemSize()
   }
   
-  private var hasSelectAny = false
+  fileprivate var hasSelectAny = false
   
   func setupInitialViewController(){
     if hasSelectAny{
@@ -149,16 +149,16 @@ public class BXTabLayoutViewController:UIViewController{
   
 
   
-  public override func viewDidLayoutSubviews() {
+  open override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     NSLog("\(#function)")
   }
   
-  public override func viewWillAppear(animated: Bool) {
+  open override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
   }
   
-  public override func viewDidAppear(animated: Bool) {
+  open override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     NSLog("\(#function)")
     if viewControllers.count > 0 {
@@ -168,18 +168,18 @@ public class BXTabLayoutViewController:UIViewController{
   
   
   // MARK: Abstract Method
-  public func currentPageIndex() -> Int?{
+  open func currentPageIndex() -> Int?{
     guard let currentVC = currentPageViewController else{
       return nil
     }
-    return  viewControllers.indexOf(currentVC)
+    return  viewControllers.index(of: currentVC)
   }
   
-  public func showPageAtIndex(index:Int){
+  open func showPageAtIndex(_ index:Int){
     fatalError("Should Override this")
   }
   
-  public var currentPageViewController:UIViewController?{
+  open var currentPageViewController:UIViewController?{
     fatalError("Should Override this")
   }
   

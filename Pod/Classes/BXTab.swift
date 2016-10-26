@@ -9,16 +9,16 @@
 import UIKit
 
 // MARK: BXTab Model
-public class BXTab{
-  public static let INVALID_POSITION = -1
+open class BXTab{
+  open static let INVALID_POSITION = -1
   
-  public var tag:AnyObject?
-  public var icon:UIImage?
-  public var text:String?
-  public var contentDesc:String?
-  public var badgeValue:String?
+  open var tag:AnyObject?
+  open var icon:UIImage?
+  open var text:String?
+  open var contentDesc:String?
+  open var badgeValue:String?
   
-  public var position = BXTab.INVALID_POSITION
+  open var position = BXTab.INVALID_POSITION
   
   public init(text:String?,icon:UIImage? = nil){
     self.text = text

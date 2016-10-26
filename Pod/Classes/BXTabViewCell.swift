@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class BXTabViewCell: UICollectionViewCell {
+open class BXTabViewCell: UICollectionViewCell {
   
-  public func bind(tag:BXTab){
+  open func bind(_ tag:BXTab){
       fatalError("Sub Class Should Override the method")
   }
 }

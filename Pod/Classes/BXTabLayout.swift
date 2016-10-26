@@ -4,12 +4,12 @@
 // 比如 Android Google Play 中的顶栏就是可滚动的. 国内众多 的新闻客户端 Tab 栏也是可滚动的.
 // 可滚动的 Tab 栏可以指定可见的 Tab 数量,为了更灵活的控制,可见 Tab 数量可以指定为小数
 public enum BXTabLayoutMode{
-  case Scrollable(visibleItems:CGFloat)
-  case Fixed
+  case scrollable(visibleItems:CGFloat)
+  case fixed
   
   var isFixed:Bool{
     switch self{
-    case .Fixed: return true
+    case .fixed: return true
     default: return false
     }
   }
@@ -34,37 +34,37 @@ import PinAuto
 // shadow[hor0,h1,b0]:v
 // indicator[w60,h2,b0]:v
 
-public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
+open class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
   lazy var collectionView :UICollectionView = { [unowned self] in
-    return UICollectionView(frame: CGRectZero, collectionViewLayout: self.flowLayout)
+    return UICollectionView(frame: CGRect.zero, collectionViewLayout: self.flowLayout)
     }()
   
-  private lazy var flowLayout:UICollectionViewFlowLayout = {
+  fileprivate lazy var flowLayout:UICollectionViewFlowLayout = {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.minimumInteritemSpacing = 10
     flowLayout.itemSize = CGSize(width:100,height:100)
     flowLayout.minimumLineSpacing = 0
-    flowLayout.sectionInset = UIEdgeInsetsZero
-    flowLayout.scrollDirection = .Vertical
+    flowLayout.sectionInset = UIEdgeInsets.zero
+    flowLayout.scrollDirection = .vertical
     return flowLayout
   }()
   
-  let shadowView = UIView(frame:CGRectZero)
-  let indicatorView = UIView(frame:CGRectZero)
+  let shadowView = UIView(frame:CGRect.zero)
+  let indicatorView = UIView(frame:CGRect.zero)
   
-  public dynamic var showIndicator:Bool {
+  open dynamic var showIndicator:Bool {
     get{
-      return !indicatorView.hidden
+      return !indicatorView.isHidden
     }set{
-      indicatorView.hidden = !newValue
+      indicatorView.isHidden = !newValue
     }
   }
   
-  public dynamic var showShadow:Bool{
+  open dynamic var showShadow:Bool{
     get{
-      return !shadowView.hidden
+      return !shadowView.isHidden
     }set{
-      shadowView.hidden = !newValue
+      shadowView.isHidden = !newValue
     }
   }
   
@@ -79,7 +79,7 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
   }
   
   
-  override public func awakeFromNib() {
+  override open func awakeFromNib() {
     super.awakeFromNib()
     commonInit()
   }
@@ -125,12 +125,12 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
     // 注意: 当 scrollDirection 为 .Horizontal 时,Item 之间的间距其实是 minmumLineSpacing
     flowLayout.minimumInteritemSpacing = options.minimumInteritemSpacing
     flowLayout.minimumLineSpacing = options.minimumInteritemSpacing
-    flowLayout.scrollDirection = .Horizontal
+    flowLayout.scrollDirection = .horizontal
    
     collectionView.showsHorizontalScrollIndicator = false
     collectionView.showsVerticalScrollIndicator = false
-    collectionView.scrollEnabled = true
-    collectionView.backgroundColor = .whiteColor()
+    collectionView.isScrollEnabled = true
+    collectionView.backgroundColor = .white
     
     collectionView.delegate = self
     collectionView.dataSource = self
@@ -142,7 +142,7 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
   
   // MARK: Indicator View Support
   // 使用 dynamic 以便可以支付 appearance 的设置
-  public dynamic var indicatorColor:UIColor?{
+  open dynamic var indicatorColor:UIColor?{
     get{
       NSLog("get indicatorColor")
       return indicatorView.backgroundColor
@@ -155,7 +155,7 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
   }
   
   
-  public override func tintColorDidChange() {
+  open override func tintColorDidChange() {
     super.tintColorDidChange()
     if indicatorColor == nil{
       indicatorView.backgroundColor = self.tintColor
@@ -168,39 +168,39 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
     collectionView.reloadData()
   }
   
-  public var mode:BXTabLayoutMode = .Fixed{
+  open var mode:BXTabLayoutMode = .fixed{
     didSet{
       if collectionView.dataSource != nil{
-        itemSize = CGSizeZero
+        itemSize = CGSize.zero
         reloadData()
       }
     }
   }
   
-  private var tabs:[BXTab] = []
+  fileprivate var tabs:[BXTab] = []
   
   
   
-  public var didSelectedTab: ( (BXTab) -> Void )?
+  open var didSelectedTab: ( (BXTab) -> Void )?
   
-  public var options:BXTabLayoutOptions = BXTabLayoutOptions.defaultOptions{
+  open var options:BXTabLayoutOptions = BXTabLayoutOptions.defaultOptions{
     didSet{
-      itemSize = CGSizeZero
+      itemSize = CGSize.zero
       flowLayout.minimumInteritemSpacing = options.minimumInteritemSpacing
       flowLayout.minimumLineSpacing = options.minimumInteritemSpacing //
     }
   }
   
-  public func registerClass(cellClass: AnyClass?) {
-    collectionView.registerClass(cellClass, forCellWithReuseIdentifier: BX_TAB_REUSE_IDENTIFIER)
+  open func registerClass(_ cellClass: AnyClass?) {
+    collectionView.register(cellClass, forCellWithReuseIdentifier: BX_TAB_REUSE_IDENTIFIER)
   }
   
-  public func registerNib(nib: UINib?) {
-    collectionView.registerNib(nib, forCellWithReuseIdentifier: BX_TAB_REUSE_IDENTIFIER)
+  open func registerNib(_ nib: UINib?) {
+    collectionView.register(nib, forCellWithReuseIdentifier: BX_TAB_REUSE_IDENTIFIER)
   }
   
-  public func addTab(tab:BXTab,index:Int = 0,setSelected:Bool = false){
-    tabs.insert(tab, atIndex: index)
+  open func addTab(_ tab:BXTab,index:Int = 0,setSelected:Bool = false){
+    tabs.insert(tab, at: index)
     reloadData()
     if(setSelected){
       selectTabAtIndex(index)
@@ -208,27 +208,26 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
     
   }
   
-  public func updateTabs(tabs:[BXTab]){
+  open func updateTabs(_ tabs:[BXTab]){
     self.tabs.removeAll()
-    self.tabs.appendContentsOf(tabs)
+    self.tabs.append(contentsOf: tabs)
     reloadData()
     if tabs.count > 0 {
-      if let indexPaths = collectionView.indexPathsForSelectedItems() where indexPaths.isEmpty{
-        collectionView.selectItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0), animated: true, scrollPosition: .CenteredHorizontally)
+      if let indexPaths = collectionView.indexPathsForSelectedItems , indexPaths.isEmpty{
+        collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
       }
     }
   }
  
-  public func bx_delay(delay:NSTimeInterval,block:dispatch_block_t){
-    dispatch_after(
-      dispatch_time(DISPATCH_TIME_NOW,Int64(delay * Double(NSEC_PER_SEC)))
-      , dispatch_get_main_queue()
-      , block)
+  open func bx_delay(_ delay:TimeInterval,block:@escaping ()->()){
+    DispatchQueue.main.asyncAfter(
+      deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+      , execute: block)
   }
   
-  public func selectTabAtIndex(index:Int){
-    let indexPath = NSIndexPath(forItem: index, inSection: 0)
-    collectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: UICollectionViewScrollPosition.CenteredHorizontally)
+  open func selectTabAtIndex(_ index:Int){
+    let indexPath = IndexPath(item: index, section: 0)
+    collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionViewScrollPosition.centeredHorizontally)
     if mode.isFixed{
       self.onSelectedTabChanged()
     }else{
@@ -239,8 +238,8 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
     }
   }
   
-  public func tabAtIndexPath(indexPath:NSIndexPath) -> BXTab{
-    return tabs[indexPath.item]
+  open func tabAtIndexPath(_ indexPath:IndexPath) -> BXTab{
+    return tabs[(indexPath as NSIndexPath).item]
   }
   
   func onSelectedTabChanged(){
@@ -248,103 +247,103 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
   }
   
   func updateIndicatorView(){
-    guard  let indexPath = collectionView.indexPathsForSelectedItems()?.first else{
+    guard  let indexPath = collectionView.indexPathsForSelectedItems?.first else{
       return
     }
     
    
     if mode.isFixed{
       let itemSize = flowLayout.itemSize
-      let item = CGFloat(indexPath.item)
+      let item = CGFloat((indexPath as NSIndexPath).item)
       let originX =  collectionView.bounds.origin.x + (itemSize.width * item) + (flowLayout.minimumLineSpacing * item)
       let centerX = originX + itemSize.width * 0.5
-      UIView.animateWithDuration(0.3){
+      UIView.animate(withDuration: 0.3, animations: {
         self.indicatorView.center.x = centerX
-      }
+      })
     }else{
-      guard let attrs = flowLayout.layoutAttributesForItemAtIndexPath(indexPath) else{
+      guard let attrs = flowLayout.layoutAttributesForItem(at: indexPath) else{
         return
       }
       NSLog("Current Selected Item Attrs:\(attrs)")
       let originX = attrs.frame.minX - collectionView.bounds.origin.x
       let centerX = originX + attrs.frame.width * 0.5
       
-      UIView.animateWithDuration(0.3){
+      UIView.animate(withDuration: 0.3, animations: {
         self.indicatorView.center.x = centerX
-      }
+      })
     }
 
   }
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
     updateItemSize()
     updateIndicatorView()
     NSLog("\(#function)")
   }
   
-  public override func didMoveToWindow() {
+  open override func didMoveToWindow() {
     super.didMoveToWindow()
     NSLog("\(#function)")
   }
   
   
-  public var numberOfTabs:Int{
+  open var numberOfTabs:Int{
     return tabs.count
   }
   
   // 自由类中实现中才可以被继承的子类重写,所以放在同一个类中
   //MARK: UICollectionViewDataSource
   
-  public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int{
+  open func numberOfSections(in collectionView: UICollectionView) -> Int{
     return 1
   }
   
-  public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+  open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
     return numberOfTabs
   }
   
   
-  public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+  open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let tab = tabAtIndexPath(indexPath)
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(BX_TAB_REUSE_IDENTIFIER, forIndexPath: indexPath) as! BXTabViewCell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BX_TAB_REUSE_IDENTIFIER, for: indexPath) as! BXTabViewCell
     cell.bind(tab)
     return cell
   }
   
   // MARK: UICollectionViewDelegate
   
-  public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+  open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let tab = tabAtIndexPath(indexPath)
-    tab.position = indexPath.row
+    tab.position = (indexPath as NSIndexPath).row
     didSelectedTab?(tab)
     onSelectedTabChanged()
   }
   
   
-  private var itemSize:CGSize = CGSizeZero
+  fileprivate var itemSize:CGSize = CGSize.zero
   
-  private func calculateItemWidth() -> CGFloat{
+  fileprivate func calculateItemWidth() -> CGFloat{
     if collectionView.bounds.width < 1{
       return 0
     }
     let tabCount:CGFloat = CGFloat(numberOfTabs)
     var visibleTabCount = tabCount
     switch mode{
-    case .Scrollable(let visibleItems):
+    case .scrollable(let visibleItems):
       visibleTabCount = visibleItems
     default:break
     }
     
     let spaceCount :CGFloat = visibleTabCount - 1
-    let itemSpace = flowLayout.scrollDirection == .Horizontal ? flowLayout.minimumLineSpacing: flowLayout.minimumInteritemSpacing
+    let itemSpace = flowLayout.scrollDirection == .horizontal ? flowLayout.minimumLineSpacing: flowLayout.minimumInteritemSpacing
     let totalWidth = collectionView.bounds.width - itemSpace * spaceCount - flowLayout.sectionInset.left - flowLayout.sectionInset.right
     let itemWidth = totalWidth / visibleTabCount
     return itemWidth
     
   }
   
-  private func calculateItemHeight() -> CGFloat{
+  fileprivate func calculateItemHeight() -> CGFloat{
     if collectionView.bounds.height < 1{
       return 0
     }
@@ -352,8 +351,8 @@ public class BXTabLayout : UIView,UICollectionViewDelegateFlowLayout,UICollectio
     return height
   }
   
-  public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    if itemSize == CGSizeZero{
+  open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    if itemSize == CGSize.zero{
       itemSize = CGSize(width: calculateItemWidth(),height: calculateItemHeight())
     }
     return itemSize

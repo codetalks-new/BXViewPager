@@ -1,6 +1,6 @@
 {
   "name": "BXViewPager",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "summary": "BXViewPager is a Lib inspired by Android ViewPager,and offers more customize options",
   "description": "BXViewPager is a Lib inspired by Android ViewPager,and offers more customize options,\nSupport Fixed or Scrollable TabLayout,Support Tab Cell with Badge Value",
   "homepage": "https://github.com/banxi1988/BXViewPager",
@@ -10,16 +10,19 @@
   },
   "source": {
     "git": "https://github.com/banxi1988/BXViewPager.git",
-    "tag": "0.1.4"
+    "tag": "0.1.7"
   },
   "platforms": {
     "ios": "8.0"
   },
   "requires_arc": true,
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "3.0"
+  },
   "source_files": "Pod/Classes/**/*",
   "dependencies": {
     "PinAuto": [
-
+      "~>2.0"
     ]
   }
 }

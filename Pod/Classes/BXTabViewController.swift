@@ -11,15 +11,15 @@ import PinAuto
 
 
 
-public class BXTabViewController: BXTabLayoutViewController{
+open class BXTabViewController: BXTabLayoutViewController{
  
   var currentVisibleController:UIViewController?
 
-  public override var currentPageViewController:UIViewController?{
+  open override var currentPageViewController:UIViewController?{
     return currentVisibleController
   }
   
-  public override func showPageAtIndex(index:Int){
+  open override func showPageAtIndex(_ index:Int){
     if viewControllers.isEmpty{
       return
     }
@@ -29,7 +29,7 @@ public class BXTabViewController: BXTabLayoutViewController{
       
     }
     
-    let direction:UIPageViewControllerNavigationDirection = index > currentIndex ? .Forward:.Reverse
+    let direction:UIPageViewControllerNavigationDirection = index > currentIndex ? .forward:.reverse
     let nextVC = viewControllers[index]
     guard let prevVC = currentVisibleController else{
       displayTabViewController(nextVC)
@@ -49,18 +49,18 @@ extension BXTabViewController{
   
 
  
-  func newViewStartFrame(direction:UIPageViewControllerNavigationDirection) -> CGRect{
+  func newViewStartFrame(_ direction:UIPageViewControllerNavigationDirection) -> CGRect{
     let frame = containerView.bounds
-    if direction == .Forward{
+    if direction == .forward{
       return frame.offsetBy(dx: frame.width, dy: 0)
     }else{
       return frame.offsetBy(dx:-frame.width, dy: 0)
     }
   }
   
-  func oldViewEndFrame(direction:UIPageViewControllerNavigationDirection) -> CGRect{
+  func oldViewEndFrame(_ direction:UIPageViewControllerNavigationDirection) -> CGRect{
     let frame = containerView.bounds
-    if direction == .Forward{
+    if direction == .forward{
       return frame.offsetBy(dx: -frame.width, dy: 0)
     }else{
       return frame.offsetBy(dx:frame.width, dy: 0)
@@ -68,9 +68,9 @@ extension BXTabViewController{
   }
   
   
-  func switchFromViewController(oldVC:UIViewController,toViewController newVC:UIViewController,navigationDirection:UIPageViewControllerNavigationDirection = .Forward){
+  func switchFromViewController(_ oldVC:UIViewController,toViewController newVC:UIViewController,navigationDirection:UIPageViewControllerNavigationDirection = .forward){
     // Prepare the two view controllers for the change.
-    oldVC.willMoveToParentViewController(nil)
+    oldVC.willMove(toParentViewController: nil)
     self.addChildViewController(newVC)
     
     // Get the start frame of the new view controller and the end frame
@@ -80,7 +80,7 @@ extension BXTabViewController{
     let oldEndFrame = oldViewEndFrame(navigationDirection)
     let newEndFrame = oldVC.view.frame
     
-    transitionFromViewController(oldVC, toViewController: newVC, duration: 0.25, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+    transition(from: oldVC, to: newVC, duration: 0.25, options: UIViewAnimationOptions(), animations: { () -> Void in
       // Animate the views to their final positions
         newVC.view.frame = newEndFrame
         oldVC.view.frame = oldEndFrame
@@ -89,21 +89,21 @@ extension BXTabViewController{
         // notification to the new view Controller
         oldVC.view.removeFromSuperview()
         oldVC.removeFromParentViewController()
-        newVC.didMoveToParentViewController(self)
+        newVC.didMove(toParentViewController: self)
         self.currentVisibleController = newVC
         
     }
   }
   
-  private func displayTabViewController(controller:UIViewController){
+  fileprivate func displayTabViewController(_ controller:UIViewController){
     addChildViewController(controller)
     controller.view.frame = frameForTabViewController
     self.containerView.addSubview(controller.view)
-    controller.didMoveToParentViewController(self)
+    controller.didMove(toParentViewController: self)
     self.currentVisibleController = controller
   }
   
-  private var frameForTabViewController:CGRect{
+  fileprivate var frameForTabViewController:CGRect{
     return containerView.bounds
   
   }
